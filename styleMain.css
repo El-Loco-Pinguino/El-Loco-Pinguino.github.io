@@ -44,14 +44,24 @@ img {
 }
 
 /* Navbar */
+.navbar-nav {
+	margin-top: 0.5em;
+}
+
 .navbar-text {
 	font-size: 1em;
 	vertical-align: middle;
 }
 
-.navbar-default div {
+.navbar-light div {
 	background-color: #ff5e03;
 	height: 5em;
+}
+
+.nav-item {
+	font-size: 1.5em;
+	font-family: "Anic Regular";
+	margin: 0 0.25em;
 }
 
 /* Carrousel */
