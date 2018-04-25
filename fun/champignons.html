@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <title>Des 1-up à foison !</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+  <style>
+      #main {
+          width: 800px;
+          height: 400px;
+          background-image: url("https://pre00.deviantart.net/884f/th/pre/i/2006/133/9/7/idyllic_mario_by_blendmaster.png");
+          background-size: contain;
+          overflow: hidden;
+          position: relative;
+      }
+
+      .champignon {
+          position: absolute;
+          display: inline;
+      }
+  </style>
+  <body>
+      <div id="main">
+
+      </div>
+      <button type="button" onclick="creerChampi()">Générer 10 champignons (attention, faites-le avec modération)</button>
+
+    <script type="text/javascript">
+        const blocMain = document.getElementById("main")
+        const creerChampi = () => {
+            for (let a = 0; a < 10; a++) {
+                let coordonneeX = Math.trunc(Math.random() * 800)
+                let coordonneeY = Math.trunc(Math.random() * 400)
+                blocMain.innerHTML += `<img class="champignon" src="champi.png" style="left: ${coordonneeX}px; top: ${coordonneeY}px;">`
+            }
+        }
+    </script> 
+  </body>
+</html>
