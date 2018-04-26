@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inputs attentifs</title>
+</head>
+<body>
+    <h2>Input automatique</h2>
+    <input type="text" id="autoSaisie" placeholder="Ecrire quelque chose" oninput="altererInput()"><br/>
+    <div>
+        <p>Ce qu'il y a dans l'input: <strong><span id="blocSaisie"></span></strong></p>
+    </div>
+
+    <h2>Conditions</h2>
+    <input type="number" id="nombreSaisi" placeholder="Un nombre supérieur à 12" oninput="observerNombre()"><br/>
+    <div>
+        <p>Ce qu'il y a dans l'input: <strong><span id="blocNombre"></span></strong></p>
+        <p><strong><span id="messageNombre"></span></strong></p>
+    </div>
+
+    <h2>Vérification des champs renseignés</h2>
+    <div>
+        <p>L'input de texte automatisé <strong><span id="finalInput">est</span> vide !</strong></p>
+        <p>L'input du nombre <strong><span id="finalNombreVide">est</span> vide !</strong></p>
+    </div>
+
+    <script>
+        const altererInput = () => {
+            const blocInput = document.getElementById("autoSaisie")
+            const blocTexte = document.getElementById("blocSaisie")
+            blocTexte.innerHTML = blocInput.value
+            verifierGroupe()
+        }
+
+        const observerNombre = () => {
+            const nombreSaisi = document.getElementById("nombreSaisi")
+            const blocNombre = document.getElementById("blocNombre")
+            const messageNombre = document.getElementById("messageNombre")
+            blocNombre.innerHTML = nombreSaisi.value
+            
+            if (nombreSaisi.value > 12) {
+                messageNombre.innerHTML = "C'est bel et bien supérieur à 12 !"
+            } else {
+                messageNombre.innerHTML = "Ce n'est pas supérieur à 12 !"
+            }
+            verifierGroupe()
+        }
+
+        const verifierGroupe = () => {
+            const blocInput = document.getElementById("autoSaisie")
+            const blocTexte = document.getElementById("blocSaisie")
+            blocTexte.innerHTML = blocInput.value
+
+            const nombreSaisi = document.getElementById("nombreSaisi")
+            const blocNombre = document.getElementById("blocNombre")
+            const messageNombre = document.getElementById("messageNombre")
+            blocNombre.innerHTML = nombreSaisi.value
+
+            if (blocInput.value == "") {
+                document.getElementById("finalInput").innerHTML = "est"
+            } else {
+                document.getElementById("finalInput").innerHTML = "n'est pas"
+            }
+
+            if (nombreSaisi.value == "") {
+                document.getElementById("finalNombreVide").innerHTML = "est"
+            } else {
+                document.getElementById("finalNombreVide").innerHTML = "n'est pas"
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <h1>Traducteur</h1>
+    <table>
+        <tr>
+            <th>Je veux traduire ...</th>
+            <th>en ...</th>
+            <th>Réponse</th>
+        </tr>
+        <tr>
+            <td>
+                <select id="mot" onchange="majTrad()">
+                    <option value="hello">Bonjour</option>
+                    <option value="byebye">Au revoir</option>
+                    <option value="thanks">Merci</option>
+                    <option value="please">S'il vous plait</option>
+                </select>
+            </td>
+            <td>
+                <select id="langue" onchange="majTrad()">
+                    <option value="eng">Anglais</option>
+                    <option value="ger">Allemand</option>
+                    <option value="esp">Espagnol</option>
+                    <option value="jap">Japonais</option>
+                    <option value="ita">Italien</option>
+                    <option value="sig">Langage des signes</option>
+                </select>
+            </td>
+            <td id="resultat">
+
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        const majTrad = () => {
+            let aTraduire = document.getElementById("mot").value
+            let langue = document.getElementById("langue").value
+
+            switch (aTraduire) {
+                case "hello":
+                switch (langue) {
+                    case "eng":
+                        ecrireTrad("Hello !")
+                        break;
+                    case "ger":
+                        ecrireTrad("Güten Tag !")
+                        break;
+                    case "esp":
+                        ecrireTrad("Holà !")
+                        break;
+                    case "jap":
+                        ecrireTrad("Konnichiwa !")
+                        break;
+                    case "ita":
+                        ecrireTrad("Ciao !")
+                        break;
+                    case "sig":
+                        ecrireTrad("C'est vraiment nécessaire ?")
+                        break;
+                    default:
+                        ecrireTrad("Indéterminé")
+                        break;
+                    }
+                break
+                case "byebye":
+                switch (langue) {
+                    case "eng":
+                        ecrireTrad("Goodbye !")
+                        break;
+                    case "ger":
+                        ecrireTrad("Auf wiedersen !")
+                        break;
+                    case "esp":
+                        ecrireTrad("Adios !")
+                        break;
+                    case "jap":
+                        ecrireTrad("Sayonara !")
+                        break;
+                    case "ita":
+                        ecrireTrad("Arrivederci !")
+                        break;
+                    case "sig":
+                        ecrireTrad("C'est vraiment nécessaire ?")
+                        break;
+                    default:
+                        ecrireTrad("Indéterminé")
+                        break;
+                    }
+                break
+                case "thanks":
+                switch (langue) {
+                    case "eng":
+                        ecrireTrad("Thanks !")
+                        break;
+                    case "ger":
+                        ecrireTrad("Danke !")
+                        break;
+                    case "esp":
+                        ecrireTrad("Gracias !")
+                        break;
+                    case "jap":
+                        ecrireTrad("Arigatô !")
+                        break;
+                    case "ita":
+                        ecrireTrad("Grazie !")
+                        break;
+                    case "sig":
+                        ecrireTrad("C'est vraiment nécessaire ?")
+                        break;
+                    default:
+                        ecrireTrad("Indéterminé")
+                        break;
+                    }
+                break
+                case "please":
+                switch (langue) {
+                    case "eng":
+                        ecrireTrad("Please...")
+                        break;
+                    case "ger":
+                        ecrireTrad("Bitte...")
+                        break;
+                    case "esp":
+                        ecrireTrad("Por favor...")
+                        break;
+                    case "jap":
+                        ecrireTrad("Shite kudasaï...")
+                        break;
+                    case "ita":
+                        ecrireTrad("Per piecere...")
+                        break;
+                    case "sig":
+                        ecrireTrad("C'est vraiment nécessaire ?")
+                        break;
+                    default:
+                        ecrireTrad("Indéterminé")
+                        break;
+                    }
+                }
+            }
+            
+            const ecrireTrad = (resultat) => {
+                document.getElementById("resultat").innerHTML = resultat
+            }
+    </script>
+</body>
+</html>
