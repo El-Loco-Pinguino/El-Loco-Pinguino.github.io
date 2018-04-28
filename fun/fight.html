@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Super-Patate VS Evil Cassoulet !</title>
+</head>
+<body>
+    <div id="actions">
+        <button onclick="attack(hero, foe)">Attaque</button>
+        <button onclick="provoke(hero, foe)">Provoquer</button>
+        <button onclick="skill(hero, foe)">Aptitude</button>
+    </div>
+
+    <div id="history">
+
+    </div>
+    <script>
+        const hero = {
+            name: "Super-Patate",
+            hp: 72,
+            atk: 55,
+            def: 28,
+            skill: "Semi-Vie"
+        }
+
+        const foe = {
+            name: "Evil Cassoulet",
+            hp: 1000,
+            atk: 8,
+            def: 5,
+            skill: "Guillotine"
+        }
+
+        let inFight = true
+        
+        const attack = (user, target) => {
+            if (inFight) {
+                let damage = Math.floor((user.atk * 4 - foe.def) * Math.floor(Math.random() * 120 + 80) / 100)
+                if (damage > 0) {
+                    target.hp -= damage
+                    document.getElementById("history").innerHTML += `<li>${user.name} attaque pour ${damage} dégâts !</li>`
+                    if (target.hp <= 0) {
+                        document.getElementById("history").innerHTML += `<li>${user.name} a gagné le combat !</li>`
+                        inFight = false
+                    }
+                } else {
+                    document.getElementById("history").innerHTML += `<li>${user.name} n'a infligé aucun dégât !</li>`
+                }
+                if (user === hero) {
+                    randomFoeAction()
+                }
+            }
+        }
+
+        const provoke = (user, target) => {
+            if (inFight) {
+                document.getElementById("history").innerHTML += `<li>${user.name} provoque l'adversaire et baisse sa force de 2 points !</li>`
+                if (target.atk > 2) {
+                    target.atk -= 2
+                }
+                if (user === hero) {
+                    randomFoeAction()
+                }
+            }
+        }
+
+        const skill = (user, target) => {
+            if (inFight) {
+                    document.getElementById("history").innerHTML += `<li>${user.name} utilise l'aptitude ${user.skill} !</li>`
+                    switch (user.skill) {
+                        case "Semi-Vie":
+                            damage = Math.floor(target.hp / 2)
+                            target.hp -= damage
+                            document.getElementById("history").innerHTML += `<li>${target.name} perd la moitié de sa vie, soit ${damage} points !</li>`
+                            break
+                        case "Guillotine":
+                            let precision = Math.random()
+                            if (precision < 0.1) {
+                                target.hp = 0
+                                document.getElementById("history").innerHTML += `<li>${target.name} meurt instantanément !</li>`
+                                inFight = false
+                            } else {
+                                document.getElementById("history").innerHTML += `<li>${user.name} a raté son attaque !</li>`
+                            }
+                    }
+                    if (user === hero) {
+                        randomFoeAction()
+                    }
+                }
+            }
+
+        const randomFoeAction = () => {
+            if (inFight) {
+                let alea = Math.floor(Math.random() * 3 + 1)
+                switch (alea) {
+                    case 1:
+                        attack(foe, hero)
+                        break
+                    case 2:
+                        provoke(foe, hero)
+                        break
+                    case 3:
+                        skill(foe, hero)
+                        break
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

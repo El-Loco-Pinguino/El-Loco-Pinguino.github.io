@@ -4,6 +4,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Expériences front-end</title>
+    <style>
+        .titreTableau {
+            font-weight: bold;
+            color: red;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+        }
+
+        table {
+            border: 2px solid black;
+            text-align: center;
+            background-color: #999;
+        }
+    </style>
 </head>
 <body>
     <h1>Cliquez sur un lien</h1>
@@ -13,8 +27,7 @@
             <th>Description</th>
         </tr>
         <tr>
-            <td><a target="_blank" href="findtheprecious/index.html">FindThePrecious</a></td>
-            <td>Le rendu d'une quête effectuée à la Wild Code School</td>
+            <td class="titreTableau" colspan="2">Expériences marrantes</td>
         </tr>
         <tr>
             <td><a target="_blank" href="fun/excusesBidon.html">Générateur d'excuses bidon</a></td>
@@ -41,8 +54,26 @@
             <td>Essentiellement les formules de politesse, ça va de soi !</td>
         </tr>
         <tr>
+            <td><a target="_blank" href="fun/fight.html">RPG minimaliste</a></td>
+            <td>Qui de Super-Patate ou de Evil Cassoulet remportera le combat ?</td>
+        </tr>
+        <tr>
+            <td class="titreTableau" colspan="2">Expériences sérieuses</td>
+        </tr>
+        <tr>
+            <td><a target="_blank" href="findtheprecious/index.html">FindThePrecious</a></td>
+            <td>Le rendu d'une quête effectuée à la Wild Code School</td>
+        </tr>
+        <tr>
+            <td class="titreTableau" colspan="2">Expériences utiles</td>
+        </tr>
+        <tr>
             <td><a target="_blank" href="utile/inputsDynamiques.html">Inputs dynamiques</a></td>
             <td>Le DOM écoute continuellement ce que vous indiquez dans les inputs</td>
+        </tr>
+        <tr>
+            <td><a target="_blank" href="utile/serieInputs.html">Inputs successifs</a></td>
+            <td>Quand vous commencez à saisir quelque chose dans l'input, un nouvel input apparaît en-dessous !</td>
         </tr>
     </table>
 </body>
