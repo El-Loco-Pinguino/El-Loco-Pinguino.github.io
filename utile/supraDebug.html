@@ -1,0 +1,97 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Supra-Débogueur</title>
+</head>
+<body>
+    <h1>Le Supra-Débogueur</h1>
+    <p>Une alternative plus intéressante que notre bon vieux console.log ! Regardez dans la console du navigateur pour voir comment ça marche !</p>
+    <ul>
+        <li>Imbrication est un tableau d'éléments imbriqués. Le Supra-Débogueur parcourt l'ensemble du tableau, y compris les éléments imbriqués dans d'autres sous-tableaux.</li>
+        <li><code>[1, 2, ["a", "b", "c"], 3, 4]</code></li>
+    </ul>
+    <ul>
+        <li>Groupement d'objets est un objet possédant plusieurs clés, de types différents. Toutes ses clés sont parcourues.</li>
+        <li><code>arr: ["gauche", 7, true], obj: {premier: 1, deuxieme: "2"}</code></li>
+    </ul>
+    <ul>
+        <li>Dodo est une variable de type string.</li>
+        <li><code>"Dodo"</code></li>
+    </ul>
+    <ul>
+        <li>Faux est un booléen.</li>
+        <li><code>false</code></li>
+    </ul>
+    <ul>
+        <li>Machin est une variable instanciée, mais la valeur undefined y a été attribuée manuellement.</li>
+        <li><code>undefined</code></li>
+    </ul>
+    <script type="text/javascript">
+        /**
+         * @name SupraDebug
+         * @description Débogue plus en détail les variables. Version complexifiée du console.log()
+         * @param {*} variable - La variable à analyser
+         * @param {string} nomVariableAffiche - Le texte indicatif à afficher. Ne sert qu'à titre de repère
+         * @return void
+         **/
+        const supraDebug = (variable, nomVariableAffiche) => {
+            switch (typeof(variable)) {
+                case "undefined":
+                    console.log(`${nomVariableAffiche} n'est pas définie`)
+                    break
+                case "number":
+                    console.log(`${nomVariableAffiche} est un nombre qui vaut ${variable}`)
+                    break
+                case "object":
+                    if (variable === null) {
+                        // Null est considéré comme un objet
+                        console.log(`${nomVariableAffiche} est "null"`)
+                    } else {
+                        if (variable.length !== undefined) {
+                            // Length existe -> c'est un array
+                            console.log(`${nomVariableAffiche} est un array de ${variable.length} éléments`)
+                            for (let a = 0; a < variable.length; a++) {
+                                supraDebug(variable[a], `L'index ${a} de ${nomVariableAffiche}`)
+                            }
+                        } else {
+                            // Length n'existe pas -> c'est un objet
+                            console.log(`${nomVariableAffiche} est un objet`)
+                            for (let item in variable) {
+                                supraDebug(variable[item], `La clé ${item}`)
+                            }
+                        }
+                    }
+                    break
+                case "string":
+                    console.log(`${nomVariableAffiche} est une chaîne de caractères égale à "${variable}"`)
+                    break
+                case "boolean":
+                    console.log(`${nomVariableAffiche} est un booléen "${variable}"`)
+                    break
+                case "function":
+                    console.log(`${nomVariableAffiche} est une fonction`)
+                    break
+                case "default":
+                    console.log(`${nomVariableAffiche} a un type indéterminé. Utilisez typeof pour plus de détails`)
+                    break
+            }
+        }
+
+        const numerotes = {
+            arr: ["gauche", 7, true],
+            obj: {premier: 1, deuxieme: "2"}
+        }
+
+        const machin = undefined
+
+        // Application
+        supraDebug([1, 2, ["a", "b", "c"], 3, 4], "Imbrication")
+        supraDebug(numerotes, "Groupement d'objets")
+        supraDebug("Dodo", "Dodo")
+        supraDebug(false, "Faux")
+        supraDebug(machin, "Machin")
+    </script>
+</body>
+</html>
