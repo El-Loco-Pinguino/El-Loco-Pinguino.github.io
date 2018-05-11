@@ -101,6 +101,11 @@ button {
     padding-bottom: 0;
 }
 
+.carousel {
+    width: 60%;
+    margin: 0 auto;
+}
+
 .title {
     width: 100%;
     text-align: center;
@@ -151,6 +156,17 @@ figcaption {
     position: absolute;
     left: 10px;
     top: 10px;
+    width: 180px;
+}
+
+.captionBottom {
+    border-radius: 20px;
+    font-size: 1em;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
     width: 180px;
 }
 
