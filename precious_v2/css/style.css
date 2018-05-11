@@ -1,0 +1,203 @@
+@font-face {
+    font-family: "Aniron", sans-serif;
+    src: url("../fonts/anicm___.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Party Business", sans-serif;
+    src: url("../fonts/partybusiness.ttf");
+}
+
+@font-face {
+    font-family: "Tengwar", sans-serif;
+    src: url("../fonts/tngan.ttf");
+}
+
+@font-face {
+    font-family: "Tengwar Annatar", sans-serif;
+    src: url("../fonts/tngan.ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+.row {
+    padding: 2em 0;
+}
+
+.row > div {
+    margin: 1em 0;
+}
+
+form * {
+    width: 100%;
+}
+
+input, textarea {
+    margin: 1em 0;
+}
+
+body {
+    font-family: "Aniron", sans-serif;
+    background-image: url("../img/bg_light.png");
+    background-repeat: repeat;
+}    
+
+button {
+    color: orangered;
+    width: auto;
+    height: 4em;
+    font-weight: bold;
+    transform: skewX(-20deg);
+}    
+
+.orangeBack {
+    background-color: orangered;
+}
+
+.navbar {
+    vertical-align: middle;
+}
+
+.verticalSeparator {
+    font-size: 1.5em;
+    color: white;
+    margin: 0 0.2em;
+}
+
+#logo {
+    margin-right: auto;
+}
+
+.navbar a, footer p {
+    color: white;
+}
+
+.navbar a:hover, footer a:hover {
+    border-bottom: 2px solid white;
+    padding-bottom: 0;
+    text-decoration-line: none;
+}
+
+.carouselBorder {
+    height: auto;
+}
+
+.carouselImg {
+    width: 100%;
+}
+
+.menuPills {
+    width: 100%;
+}
+
+.menuPills > li > a {
+    color: grey;
+}
+
+.menuPills > li > a:hover {
+    border-bottom: 2px solid orangered;
+    color: orangered;
+    padding-bottom: 0;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 2.5vh;
+}
+
+p {
+    font-size: 2vh;
+}
+
+.titleLeft {
+    width: 100%;
+    text-align: left;
+    font-size: 4vh;
+    margin-left: 2vw;
+}
+
+.blackBack {
+    background-image: url("../img/bg_dark.png");
+    background-repeat: repeat;
+    color: #ddd;
+}
+
+.centerElement {
+    margin: 0 auto;
+}
+
+h5 {
+    font-family: "Aniron", sans-serif;
+    font-weight: normal;
+    color: orangered;
+    margin-top: 2em;
+}
+
+/* Characters */
+figure {
+    width: 202px;
+    margin: 1em;
+    position: relative;
+    border: 2px solid black;
+}
+
+figcaption {
+    border-radius: 20px;
+    font-size: 1em;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 180px;
+}
+
+figcaption p {
+    margin: 0;
+}
+
+figure img {
+    width: 200px;
+    opacity: 0.6;
+}
+
+figure:hover img {
+    opacity: 1;
+}
+
+figure:hover figcaption {
+    display: none;
+}
+
+figcaption strong {
+    color: orangered;
+    font-weight: bold;
+}
+
+/* Cards */
+.card {
+    margin: 1em 0;
+}
+
+.card-body {
+    background-color: #bbb;
+    color: black;
+}
+
+.card-header {
+    background-color: orangered;
+    color: white;
+    font-size: 2.5vh;
+}
+
+/* Images */
+.smallImages {
+    width: 90%;
+}
+
+.gollumImage {
+    border-radius: 50%;
+    width: 20%;
+}
