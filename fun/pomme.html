@@ -15,7 +15,7 @@
             background-size: cover;
         }
 
-        #pomme1, #pomme2 {
+        #pomme1, #pomme2, #pomme3, #pomme4 {
             position: absolute;
             left: -300px;
         }
@@ -35,6 +35,26 @@
             animation-name: roule2;
             animation-iteration-count: infinite;
             animation-duration: 3s;
+            animation-timing-function: linear;
+        }
+
+        #pomme3 {
+            width: 15%;
+            height: auto;
+            bottom: 120px;
+            animation-name: roule3;
+            animation-iteration-count: infinite;
+            animation-duration: 8s;
+            animation-timing-function: linear;
+        }
+
+        #pomme4 {
+            width: 5%;
+            height: auto;
+            bottom: 160px;
+            animation-name: roule4;
+            animation-iteration-count: infinite;
+            animation-duration: 13s;
             animation-timing-function: linear;
         }
 
@@ -61,10 +81,36 @@
                 transform: rotate(360deg);
             }
         }
+
+        @keyframes roule3 {
+            from {
+                left: -300px;
+                transform: rotate(0deg);
+            }
+
+            to {
+                left: 800px;
+                transform: rotate(1800deg);
+            }
+        }
+
+        @keyframes roule4 {
+            from {
+                left: -300px;
+                transform: rotate(0deg);
+            }
+
+            to {
+                left: 800px;
+                transform: rotate(3600deg);
+            }
+        }
     </style>
 </head>
 <body>
     <div id="ecran">
+        <img src="pomme.png" id="pomme4">
+        <img src="pomme.png" id="pomme3">
         <img src="pomme.png" id="pomme1">
         <img src="pomme.png" id="pomme2">
     </div>
