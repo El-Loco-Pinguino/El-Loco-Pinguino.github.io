@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <title>Générateur de cards Bootstrap</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .card {
+            width: 25%;
+        }
+    </style> 
+    <script>
+        const genererCard = () => {
+            let image = document.getElementById("image").value
+            let altImage = document.getElementById("altImage").value
+            let titre = document.getElementById("titre").value
+            let texte = document.getElementById("texte").value
+
+            const cardHtml = `<div class="card col-4">
+                <img class="card-img-top" src=${image} alt=${altImage}>
+                <div class="card-body">
+                    <h4 class="card-title">${titre}</h4>
+                    <p class="card-text">${texte}</p>
+                </div>
+            </div>`
+
+            document.getElementsByClassName("row")[0].innerHTML += cardHtml
+        }
+    </script>
+  </head>
+  <body>
+    <form>
+        <label><input type="text" required id="image">URL Image</label>
+        <label><input type="text" required id="altImage">Description alternative</label>
+        <label><input type="text" required id="titre">Titre de la carte</label>
+        <label><input type="text" required id="texte">Texte de la carte</label>
+        <button type="button" onclick="genererCard()">Créer la carte</button>
+    </form>
+    <div class="container">
+        <div class="row">
+
+        </div>
+    </div>
+  </body>
+</html>
