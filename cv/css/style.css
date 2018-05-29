@@ -1,0 +1,91 @@
+@font-face {
+    font-family: "Calibri";
+    src: url("../fonts/calibri.ttf");
+}
+
+body {
+    font-family: "Calibri";
+    padding: 1.5vw;
+}
+
+h1 {
+    color: #272;
+    font-size: 5vh;
+    font-weight: 700;
+}
+
+h2 {
+    color: #242;
+    font-size: 4vh;
+}
+
+h3 {
+    color: #222;
+    font-size: 3.5vh;
+    margin-top: 2em;
+    text-decoration: underline;
+}
+
+h4 {
+    font-size: 3.25vh;
+}
+
+.card {
+    padding: 0 1em;
+    margin: 0.5em;
+    border: 2px solid #222;
+    box-shadow: 2px 2px;
+}
+
+#competences {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-text {
+    text-align: center;
+}
+
+.card-img-top {
+    max-height: 50%;
+    padding: 0.5em;
+    width: 75%;
+    margin: 0 auto;
+}
+
+meter {
+    width: 70%;
+    margin-right: 5%;
+}
+
+hr {
+    border: 2px solid mediumspringgreen;
+    margin: 2em;
+}
+
+.fas, .fab {
+    margin-right: 5%;
+}
+
+#profil {
+    border-radius: 5%;
+}
+
+.tache, .notion {
+    text-align: left;
+}
+
+@media screen and (max-width: 640px) {
+    .card-img-top {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .card-img-top {
+        width: 37.5%;
+        margin: 0 auto;
+    }
+}
