@@ -10,7 +10,10 @@
     </style>
 </head>
 <body>
-    <button onclick="phrase()" type="button">Une phrase rigolote !</button>
+    <button onclick="phrase(1)" type="button">Générer 1 phrase</button>
+    <button onclick="phrase(5)" type="button">Générer 5 phrases</button>
+    <button onclick="phrase(20)" type="button">Générer 20 phrases</button>
+    <button onclick="phrase(50)" type="button">Générer 50 phrases</button>
     
     <div id="blocMessage">
 
@@ -415,18 +418,24 @@
         document.getElementById("blocMessage").insertAdjacentHTML("afterend", `<p>${nombreElements.toLocaleString()} combinaisons actuellement !</p>`)
         document.getElementById("blocMessage").insertAdjacentHTML("afterend", `<p>${numberQui} personnes, ${numberVerbe} verbes, ${numberOu} lieux, ${numberQuoiOne} adjectifs, ${numberQuoiTwo} objets et ${numberQuoiThree} raisons</p>`)
 
-        const phrase = () => {
-            let elementsChanges = false
-            
-            // Choix d'élément dans chacun
-            let quiChoisi = Math.trunc(Math.random() * numberQui)
-            let verbeChoisi = Math.trunc(Math.random() * numberVerbe)
-            let ouChoisi = Math.trunc(Math.random() * numberOu)
-            let quoiOneChoisi = Math.trunc(Math.random() * numberQuoiOne)
-            let quoiTwoChoisi = Math.trunc(Math.random() * numberQuoiTwo)
-            let quoiThreeChoisi = Math.trunc(Math.random() * numberQuoiThree)
+        const phrase = (iterations) => {
+            for (let a = 0; a < iterations; a++) {
+                console.log(iterations)
+                // Choix d'élément dans chacun
+                let quiChoisi = Math.trunc(Math.random() * numberQui)
+                let verbeChoisi = Math.trunc(Math.random() * numberVerbe)
+                let ouChoisi = Math.trunc(Math.random() * numberOu)
+                let quoiOneChoisi = Math.trunc(Math.random() * numberQuoiOne)
+                let quoiTwoChoisi = Math.trunc(Math.random() * numberQuoiTwo)
+                let quoiThreeChoisi = Math.trunc(Math.random() * numberQuoiThree)
 
-            document.getElementById("blocMessage").insertAdjacentHTML("afterend", `<p>Je suis désolé sensei, c'est parce que <span class="evidence">${qui[quiChoisi]} ${verbe[verbeChoisi]}</span> dans <span class="evidence">${ou[ouChoisi]}</span> à cause <span class="evidence">${quoiOne[quoiOneChoisi]} ${quoiTwo[quoiTwoChoisi]}</span> qui <span class="evidence">${quoiThree[quoiThreeChoisi]}</span>...</p>`)
+                document.getElementById("blocMessage").insertAdjacentHTML("afterend",
+                `<p>Je suis désolé sensei, c'est parce que 
+                <span class="evidence">${qui[quiChoisi]} ${verbe[verbeChoisi]}</span> 
+                dans <span class="evidence">${ou[ouChoisi]}</span> 
+                à cause <span class="evidence">${quoiOne[quoiOneChoisi]} ${quoiTwo[quoiTwoChoisi]}</span> 
+                qui <span class="evidence">${quoiThree[quoiThreeChoisi]}</span>...</p>`)
+            }
         }        
     </script>
 </body>
