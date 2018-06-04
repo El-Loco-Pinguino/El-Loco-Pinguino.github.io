@@ -3,111 +3,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <title>Expériences front-end</title>
+
     <style>
-        .titreTableau {
-            font-weight: bold;
-            color: red;
-            border-top: 2px solid black;
-            border-bottom: 2px solid black;
+        .card {
+            width: 75%;
+            margin: 0 auto;
         }
 
-        table {
-            border: 2px solid black;
-            text-align: center;
-            background-color: #999;
+        .col-12 {
+            margin: 2em 0;
+        }
+
+        .btn {
+            width: 100%;
+        }
+
+        body {
+            padding: 1.5em;
         }
     </style>
 </head>
 <body>
-    <h1>Cliquez sur un lien</h1>
-    <a href="./cv/cvweb.html" target="_blank">Mon CV codé en HTML/CSS/JS</a>
-    <table>
-        <tr>
-            <th>Expérience</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td class="titreTableau" colspan="2">Expériences marrantes</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="fun/excusesBidon.html">Générateur d'excuses bidon</a></td>
-            <td>Je suis désolé sensei, c'est parce que ...</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="fun/ButtonMania.html">La secte des boutons</a></td>
-            <td>C'est presque un démineur, mais vraiment presque !</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="fun/cadran.html">Cadran</a></td>
-            <td>Un véritable "passe-temps"</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="fun/champignons.html">Génération de 1-up</a></td>
-            <td>À court de vies ? Ramassez les 1-up par 10 !</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="fun/moto.html">Une moto qui roule</a></td>
-            <td>Et pourtant, il n'y a personne dessus !</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="fun/traduction.html">Mini-traducteur</a></td>
-            <td>Essentiellement les formules de politesse, ça va de soi !</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="fun/fight.html">RPG minimaliste</a></td>
-            <td>Qui de Super-Patate ou de Evil Cassoulet remportera le combat ?</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="fun/pan.html">Tir au pistolet</a></td>
-            <td>Non... je ne fais pas partie de la NRA !</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="fun/brouilleur.html">Brouilleur hexadécimal</a></td>
-            <td>Techniquement, de la recherche par RegEx, de la conversion en hexadécimal, et du remplacement !</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="fun/pomme.html">Pommes qui roulent</a></td>
-            <td>La version avec des karts est meilleure. (Vous savez de quoi je parle, non ?)</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="fun/pixel.html">Pixel-art Bootstrap</a></td>
-            <td>C'est juste un c&oelig;ur de 10 cases sur 10, mais que c'est malin de détourner les outils !</td>
-        </tr>
-        <tr>
-            <td class="titreTableau" colspan="2">Expériences sérieuses</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="precious_v1/index.html">FindThePrecious (v1)</a></td>
-            <td>Le rendu d'une quête effectuée à la Wild Code School. Assez perfectible selon moi</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="precious_v2/index.html">FindThePrecious (v2)</a></td>
-            <td>La même quête, mais refaite sereinement. Bien plus attrayant (et tout en français !)</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="blog/index.html">Blog de la journée d'intégration</a></td>
-            <td>Un peu plus de choses à dire. Le premier des 3 projets de la Wild Code School: un site mono-page en HTML et CSS traditionnel</td>
-        </tr>
-        <tr>
-            <td class="titreTableau" colspan="2">Expériences utiles</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="utile/inputsDynamiques.html">Inputs dynamiques</a></td>
-            <td>Le DOM écoute continuellement ce que vous indiquez dans les inputs</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="utile/serieInputs.html">Inputs successifs</a></td>
-            <td>Quand vous commencez à saisir quelque chose dans l'input, un nouvel input apparaît en-dessous !</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="utile/supraDebug.html">Supra-Débogueur</a></td>
-            <td>Le console.log du JS natif n'affiche que la valeur de la variable demandée. Le Supra-Débogueur est un peu plus précis, et parcourt l'ensemble des sous-éléments de la variable (ex: tableau dans un tableau)</td>
-        </tr>
-        <tr>
-            <td><a target="_blank" href="utile/generateurCard.html">Générateur de cards Bootstrap 4</a></td>
-            <td>Par le biais d'un formulaire, générez rapidement des cartes avec image, titre et description !</td>
-        </tr>
-    </table>
+    <h1>Voici tout ce que j'ai pu bidouiller</h1>
+    <p>Les boutons vous permettent d'accéder à ces expériences dans un nouvel onglet. Elles sont classées par pertinence.</p>
+    <div class="container bg-light">
+        <div class="row" id="panel">
+            
+        </div>
+    </div>
+
+    <script>
+        const drawCard = (title, lien, description, image, dateMaj) => {
+            document.getElementById("panel").innerHTML += `
+            <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card">
+            <img class="card-img-top" src="${image}">
+            <div class="card-body">
+            <h4 class="card-title">${title}</h4>
+            <p class="card-text"><a href="${lien}" target="_blank"><button class='btn btn-primary'>Accéder</button></a><br/>${description}<br/>Mis à jour le ${dateMaj}</p>
+            </div>
+            </div>
+            </div>`
+        }
+
+        drawCard("Mon CV de développeur", "./cv/cvweb.html", "Faisons connaissance !", "./home/cv.png", "29/5/2018")
+        drawCard("Blog de la journée d'intégration", "./blog/index.html", "Le premier des 3 projets de la Wild Code School: un site mono-page en HTML et CSS traditionnel", "./home/blog.png", "1/5/2018")
+        drawCard("Find The Precious v1", "./precious_v1/index.html", "Un rendu assez perfectible selon moi", "./home/gollum1.png", "24/4/2018")
+        drawCard("Find The Precious v2", "./precious_v2/index.html", "Un résultat bien plus professionnel !", "./home/gollum2.png", "11/5/2018")
+        drawCard("Excuses bidon (FR)", "./fun/excusesBidon.html", "Je suis désolé sensei, c'est parce que…", "./home/desole.png", "31/5/2018")
+        drawCard("Excuses bidon (EN)", "./fun/fakeExcuses.html", "Boss, I'm so sorry, but…", "./home/desole.png", "3/6/2018")
+        drawCard("Excuses bidon (ES)", "./fun/falsasDisculpas.html", "Perdón señor, pero…", "./home/desole.png", "4/6/2018")
+        drawCard("Supra-Débogueur", "./utile/supraDebug.html", "Un outil personnalisé de débogage, qui passe en revue les variables souhaitées", "./home/debug.png", "7/5/2018")
+        drawCard("Inputs attentifs", "./utile/inputsDynamiques.html", "Des actions sont prévues quand vous touchez à ces zones de saisie", "./home/input.png", "26/4/2018")
+        drawCard("Inputs en série", "./utile/serieInputs.html", "Quand vous saisissez un contenu dans l'un, un autre se rajoute après", "./home/input.png", "20/4/2018")
+        drawCard("RPG minimaliste", "./fun/fight.html", "Qui de Super-Patate ou d'Evil Cassoulet remportera le combat ?", "./home/bouclier.png", "28/4/2018")
+        drawCard("Générateur de carte Bootstrap", "./utile/generateurCard.html", "Un outil de création simple et pratique", "./home/bootstrap.png", "14/5/2018")
+        drawCard("Traducteur simpliste", "./fun/traduction.html", "Juste les formules de politesse et 6 langues", "./home/salut.png", "25/4/2018")
+        drawCard("Pixel-art Bootstrap", "./fun/pixel.html", "Détourner les outils pour faire un cœur de 10 cases sur 10", "./home/coeur.png", "14/5/2018")
+        drawCard("Pommes qui roulent", "./fun/pomme.html", "Pomme qui roule en CSS n'amasse pas mousse !", "./home/pommedanse.gif", "14/5/2018")
+        drawCard("Brouilleur hexadécimal", "./fun/brouilleur.html", "Une expérience montrant ma maîtrise des expressions régulières", "./home/brouilleur.png", "4/5/2018")
+        drawCard("Moto qui roule", "./fun/moto.html", "Un déplacement par à-coups, mais un déplacement quand même !", "./home/ghostrider.png", "26/4/2018")
+        drawCard("Pistolet", "./fun/pan.html", "Appuyez sur le bouton, une balle part au loin !", "./home/pistolet.png", "29/4/2018")
+        drawCard("Variante de démineur", "./fun/ButtonMania.html", "Un démineur, mais sans les chiffres, et aléatoire !", "./home/mine.png", "19/4/2018")
+        drawCard("Nuée de champignons", "./fun/champignons.html", "Pourquoi n'avoir qu'un seul 1-up quand on peut en avoir 10 ?", "./home/oneup.png", "15/5/2018")
+        drawCard("Cadran", "./fun/cadran.html", "Ce qu'on peut appeler un véritable passe-temps", "./home/horloge.png", "25/4/2018")
+    </script>
 </body>
 </html>
