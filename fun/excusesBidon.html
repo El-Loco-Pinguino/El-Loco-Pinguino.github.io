@@ -7,6 +7,11 @@
             color: red;
             font-weight: bold;
         }
+
+        .msg {
+            line-height: 1em;
+            margin-bottom: 1em;
+        }
     </style>
 </head>
 <body>
@@ -411,6 +416,28 @@
             "me faisait à manger",
             "se prenait pour Jésus", // NEW
         ]
+
+        const commentaire = [
+            "Tu as puisé ça du générateur d'excuses ?",
+            "Oh, comme c'est dommage...",
+            "Même pas vrai d'abord.",
+            "Je partage ta peine mais tu m'as déshonoré.",
+            "Je ne sais pas trop quoi en penser...",
+            "J'étais déjà au courant de ça.",
+            "Tu vas me faire pleurer de honte...",
+            "J'apprécie ta créativité.",
+        ]
+
+        const sanction = [
+            "mon vautour domestique te dévorera le foie",
+            "tu seras corvée de vaisselle",
+            "je retiendrai une partie de ton salaire",
+            "j'irai avertir ton professeur de ton manquement",
+            "je te confisque tes bières",
+            "tu me couperas les ongles",
+            "tu garderas le bébé",
+            "tu iras chercher le pain demain",
+        ]
         
         const numberQui = qui.length
         const numberVerbe = verbe.length
@@ -418,10 +445,12 @@
         const numberQuoiOne = quoiOne.length
         const numberQuoiTwo = quoiTwo.length
         const numberQuoiThree = quoiThree.length
-        const nombreElements = numberQui * numberVerbe * numberOu * numberQuoiOne * numberQuoiTwo * numberQuoiThree
+        const numberCommentaire = commentaire.length
+        const numberSanction = sanction.length
+        const nombreElements = numberQui * numberVerbe * numberOu * numberQuoiOne * numberQuoiTwo * numberQuoiThree * numberCommentaire * numberSanction
 
         document.getElementById("blocMessage").insertAdjacentHTML("afterend", `<p>${nombreElements.toLocaleString()} combinaisons actuellement !</p>`)
-        document.getElementById("blocMessage").insertAdjacentHTML("afterend", `<p>${numberQui} personnes, ${numberVerbe} verbes, ${numberOu} lieux, ${numberQuoiOne} adjectifs, ${numberQuoiTwo} objets et ${numberQuoiThree} raisons</p>`)
+        document.getElementById("blocMessage").insertAdjacentHTML("afterend", `<p>${numberQui} personnes, ${numberVerbe} verbes, ${numberOu} lieux, ${numberQuoiOne} adjectifs, ${numberQuoiTwo} objets, ${numberQuoiThree} raisons, ${numberCommentaire} commentaires et ${numberSanction} sanctions.</p>`)
 
         const phrase = (iterations) => {
             for (let a = 0; a < iterations; a++) {
@@ -433,13 +462,16 @@
                 let quoiOneChoisi = Math.trunc(Math.random() * numberQuoiOne)
                 let quoiTwoChoisi = Math.trunc(Math.random() * numberQuoiTwo)
                 let quoiThreeChoisi = Math.trunc(Math.random() * numberQuoiThree)
+                let commentaireChoisi = Math.trunc(Math.random() * numberCommentaire)
+                let sanctionChoisi = Math.trunc(Math.random() * numberSanction)
 
                 document.getElementById("blocMessage").insertAdjacentHTML("afterend",
-                `<p>Je suis désolé sensei, c'est parce que 
+                `<div class="msg"><p>- Je suis désolé sensei, c'est parce que 
                 <span class="evidence">${qui[quiChoisi]} ${verbe[verbeChoisi]}</span> 
                 dans <span class="evidence">${ou[ouChoisi]}</span> 
                 à cause <span class="evidence">${quoiOne[quoiOneChoisi]} ${quoiTwo[quoiTwoChoisi]}</span> 
-                qui <span class="evidence">${quoiThree[quoiThreeChoisi]}</span>...</p>`)
+                qui <span class="evidence">${quoiThree[quoiThreeChoisi]}</span>...<br/>
+                - <span class="evidence">${commentaire[commentaireChoisi]}</span> Pour la peine, <span class="evidence">${sanction[sanctionChoisi]}</span>.</p></div>`)
             }
         }        
     </script>
