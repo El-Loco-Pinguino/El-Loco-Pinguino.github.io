@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cadavre exquis !</title>
+
+  <style>
+    h1 {
+      font-size: 2em;
+      color: orangered;
+      font-family: fantasy;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: orangered;
+      font-family: fantasy;
+    }
+
+    #zoneJoueurs {
+      border: 1px solid black;
+      background-color: #eee;
+      width: 50%;
+      text-align: center;
+      padding: 1em;
+    }
+
+    #resultat {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cadavre exquis à 3 joueurs</h1>
+  <form id="zoneJoueurs" onsubmit="stockerNoms(); return false">
+    <h2>Entrez le nom des participants:</h2>
+    <input type="text" required placeholder="Nom du joueur 1" class="joueurs" id="nomJ1">
+    <input type="text" required placeholder="Nom du joueur 2" class="joueurs" id="nomJ2">
+    <input type="text" required placeholder="Nom du joueur 3" class="joueurs" id="nomJ3">
+    <input type="submit" value="Commencer à jouer">
+  </form>
+
+  <p id="resultat"></p>
+
+  <script>
+    const joueurs = []
+    let phrase = []
+
+    const stockerNoms = () => {
+      joueurs.push(document.getElementById("nomJ1").value, document.getElementById("nomJ2").value, document.getElementById("nomJ3").value)
+      console.log(`${joueurs[0]}, ${joueurs[1]} et ${joueurs[2]} vont jouer.`)
+      commencerJeu(joueurs)
+    }
+
+    const commencerJeu = (participants) => {
+      participants.sort(() => { return 0.5 - Math.random() })
+      console.log(`${joueurs[0]} jouera en premier, ${joueurs[1]} en deuxième et ${joueurs[2]} en dernier.`)
+      demanderMorceau(joueurs[0], "une personne", "José, l'expert-comptable, Cendrillon")
+      demanderMorceau(joueurs[1], "un adjectif (privilégiez les adjectifs s'écrivant pareil au masculin et au féminin)", "morose, carnivore, rouge")
+      demanderMorceau(joueurs[2], "un verbe (évitez les formes pronominales)", "a gratté, disputa, vendit")
+      demanderMorceau(joueurs[0], "un nom (commun ou propre)", "le concierge, Abdelkarim, la vitrine")
+      demanderMorceau(joueurs[1], "un complément du nom (incluez \"de\", \"du\", ...)", "de l'église, du Walhalla, des catacombes")
+      demanderMorceau(joueurs[2], "un groupe libre avec une préposition/conjonction au début", "et c'était marrant, donc il a crié, vers treize heures")
+      demanderMorceau(joueurs[0], "une raison", "car les prix ne font qu'augmenter, puisqu'il était en retard, car il n'a pas arrêté de râler")
+      demanderMorceau(joueurs[1], "le début de la morale de l'histoire (soyez créatif)", "méfiez-vous des vampires espagnols, n'oubliez pas de faire la vaisselle, si tu trouves un billet de 500 euros")
+      demanderMorceau(joueurs[2], "la fin de la morale de l'histoire", "surtout le jeudi, en marchant à reculons, en invitant belle-maman")
+      document.getElementById("resultat").innerHTML = phrase[0] + " " + phrase[1] + " " + phrase[2] + " " + phrase[3] + " " + phrase[4] + " " + phrase[5] + " " + phrase[6] + ". La moralité de cette histoire: " + phrase[7] + ", " + phrase[8] + "."
+      document.getElementById("resultat").innerHTML += '<button type="button" onclick="recommencerJeu()">Recommencer</button>'
+    }
+
+    const demanderMorceau = (joueurQuiJoue, elementDemande, exemplePropose) => {
+      let reponse = prompt(`${joueurQuiJoue}, saisissez ${elementDemande} ci-dessous. Exemples: ${exemplePropose}`)
+      phrase.push(reponse)
+    }
+
+    const recommencerJeu = () => {
+      phrase = []
+      document.getElementById("resultat").innerHTML = ""
+    }
+  </script>
+</body>
+</html>
