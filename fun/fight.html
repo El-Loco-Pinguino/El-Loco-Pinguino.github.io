@@ -12,6 +12,10 @@
         <button onclick="skill(hero, foe)">Aptitude</button>
     </div>
 
+    <div id="jauges">
+
+    </div>
+
     <div id="history">
 
     </div>
@@ -19,6 +23,7 @@
         const hero = {
             name: "Super-Patate",
             hp: 72,
+            maxhp: 72,
             atk: 55,
             def: 28,
             skill: "Semi-Vie"
@@ -27,12 +32,19 @@
         const foe = {
             name: "Evil Cassoulet",
             hp: 1000,
+            maxhp: 1000,
             atk: 8,
             def: 5,
             skill: "Guillotine"
         }
 
+        document.getElementById("jauges").innerHTML = `Super Patate <progress min="0" max=${hero.maxhp} value=${hero.hp}></progress><br/>Evil Cassoulet <progress min="0" max=${foe.maxhp} value=${foe.hp}></progress>`
+
         let inFight = true
+
+        const updateGauge = () => {
+            document.getElementById("jauges").innerHTML = `Super Patate <progress min="0" max=${hero.maxhp} value=${hero.hp}></progress><br/>Evil Cassoulet <progress min="0" max=${foe.maxhp} value=${foe.hp}></progress>`
+        }
         
         const attack = (user, target) => {
             if (inFight) {
@@ -40,6 +52,7 @@
                 if (damage > 0) {
                     target.hp -= damage
                     document.getElementById("history").innerHTML += `<li>${user.name} attaque pour ${damage} dégâts !</li>`
+                    updateGauge()
                     if (target.hp <= 0) {
                         document.getElementById("history").innerHTML += `<li>${user.name} a gagné le combat !</li>`
                         inFight = false
@@ -72,12 +85,14 @@
                         case "Semi-Vie":
                             damage = Math.floor(target.hp / 2)
                             target.hp -= damage
+                            updateGauge()
                             document.getElementById("history").innerHTML += `<li>${target.name} perd la moitié de sa vie, soit ${damage} points !</li>`
                             break
                         case "Guillotine":
                             let precision = Math.random()
                             if (precision < 0.1) {
                                 target.hp = 0
+                                updateGauge()
                                 document.getElementById("history").innerHTML += `<li>${target.name} meurt instantanément !</li>`
                                 inFight = false
                             } else {
