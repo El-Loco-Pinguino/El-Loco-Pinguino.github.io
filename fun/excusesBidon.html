@@ -460,6 +460,8 @@
             "tu rempliras ma déclaration d'impôts",
         ]
         
+        let nombrePhrase = 0
+        const limite = 500
         const numberQui = qui.length
         const numberVerbe = verbe.length
         const numberOu = ou.length
@@ -474,25 +476,29 @@
         document.getElementById("blocMessage").insertAdjacentHTML("afterend", `<p>${numberQui} personnes, ${numberVerbe} verbes, ${numberOu} lieux, ${numberQuoiOne} adjectifs, ${numberQuoiTwo} objets, ${numberQuoiThree} raisons, ${numberCommentaire} commentaires et ${numberSanction} sanctions.</p>`)
 
         const phrase = (iterations) => {
-            for (let a = 0; a < iterations; a++) {
-                console.log(iterations)
-                // Choix d'élément dans chacun
-                let quiChoisi = Math.trunc(Math.random() * numberQui)
-                let verbeChoisi = Math.trunc(Math.random() * numberVerbe)
-                let ouChoisi = Math.trunc(Math.random() * numberOu)
-                let quoiOneChoisi = Math.trunc(Math.random() * numberQuoiOne)
-                let quoiTwoChoisi = Math.trunc(Math.random() * numberQuoiTwo)
-                let quoiThreeChoisi = Math.trunc(Math.random() * numberQuoiThree)
-                let commentaireChoisi = Math.trunc(Math.random() * numberCommentaire)
-                let sanctionChoisi = Math.trunc(Math.random() * numberSanction)
-
-                document.getElementById("blocMessage").insertAdjacentHTML("afterend",
-                `<div class="msg"><p>- Je suis désolé sensei, c'est parce que 
-                <span class="evidence">${qui[quiChoisi]} ${verbe[verbeChoisi]}</span> 
-                dans <span class="evidence">${ou[ouChoisi]}</span> 
-                à cause <span class="evidence">${quoiOne[quoiOneChoisi]} ${quoiTwo[quoiTwoChoisi]}</span> 
-                qui <span class="evidence">${quoiThree[quoiThreeChoisi]}</span>...<br/>
-                - <span class="evidence">${commentaire[commentaireChoisi]}</span> Pour la peine, <span class="evidence">${sanction[sanctionChoisi]}</span>.</p></div>`)
+            if (nombrePhrase + iterations > limite) {
+                alert(`Vous avez dépassé la limite de ${limite} phrases.`)
+            } else {
+                nombrePhrase += iterations
+                for (let a = 0; a < iterations; a++) {
+                    // Choix d'élément dans chacun
+                    let quiChoisi = Math.trunc(Math.random() * numberQui)
+                    let verbeChoisi = Math.trunc(Math.random() * numberVerbe)
+                    let ouChoisi = Math.trunc(Math.random() * numberOu)
+                    let quoiOneChoisi = Math.trunc(Math.random() * numberQuoiOne)
+                    let quoiTwoChoisi = Math.trunc(Math.random() * numberQuoiTwo)
+                    let quoiThreeChoisi = Math.trunc(Math.random() * numberQuoiThree)
+                    let commentaireChoisi = Math.trunc(Math.random() * numberCommentaire)
+                    let sanctionChoisi = Math.trunc(Math.random() * numberSanction)
+    
+                    document.getElementById("blocMessage").insertAdjacentHTML("afterend",
+                    `<div class="msg"><p>- Je suis désolé sensei, c'est parce que 
+                    <span class="evidence">${qui[quiChoisi]} ${verbe[verbeChoisi]}</span> 
+                    dans <span class="evidence">${ou[ouChoisi]}</span> 
+                    à cause <span class="evidence">${quoiOne[quoiOneChoisi]} ${quoiTwo[quoiTwoChoisi]}</span> 
+                    qui <span class="evidence">${quoiThree[quoiThreeChoisi]}</span>...<br/>
+                    - <span class="evidence">${commentaire[commentaireChoisi]}</span> Pour la peine, <span class="evidence">${sanction[sanctionChoisi]}</span>.</p></div>`)
+                }
             }
         }        
     </script>
