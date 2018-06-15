@@ -1,6 +1,6 @@
 const drawCard = (image, title, description, skill, categorie) => {
     document.getElementById(categorie).innerHTML += `
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="col-12 col-md-6 col-lg-3">
     <div class="card">
     <img class="card-img-top" src="./img/${image}">
     <div class="card-body">
@@ -13,7 +13,7 @@ const drawCard = (image, title, description, skill, categorie) => {
 }
 
 drawCard("html5.png", "HTML5", "Respect des bonnes pratiques W3C", 4, "competencesWeb")
-drawCard("css3.png", "CSS3", `Exploitation du potentiel des <a href="https://el-loco-pinguino.github.io/fun/pomme.html">animations</a> CSS et de la librairie Bootstrap (mise en &oelig;uvre sur ce CV !)`, 4, "competencesWeb")
+drawCard("css3.png", "CSS3", `Exploitation du potentiel des <a href="https://el-loco-pinguino.github.io/fun/pomme.html">animations</a> CSS et de la librairie Bootstrap`, 4, "competencesWeb")
 drawCard("js.png", "JavaScript (client)", `Divers travaux personnels réalisés (<a target="_blank" href="https://el-loco-pinguino.github.io/fun/fight.html">jeu de combat minimaliste</a>, <a target="_blank" href="https://el-loco-pinguino.github.io/fun/excusesBidon.html">générateur d'excuses bidon</a>, ...)`, 4, "competencesWeb")
 drawCard("node.png", "JavaScript (serveur)", "Utilisation de NodeJS et exploitation des API distantes", 3, "competencesWeb")
 drawCard("react.png", "React", "Librairie principale et complément de style Reactstrap", 3, "competencesWeb")
@@ -28,4 +28,3 @@ drawCard("office.png", "Microsoft Office", "Version 2007 principalement. Bon niv
 drawCard("machineaecrire.png", "Rédaction", "Aisance en orthographe. Rédaction de documents professionnels", 5, "competencesTrans")
 drawCard("project.jpg", "Méthodologie de projet", "Attribution des tâches et compte-rendu des réalisations", 4, "competencesTrans")
 drawCard("blender.png", "Blender 3D", "Maîtrise des bases du logiciel grâce à des tutoriels vidéo. Apte à faire des objets simples", 2, "competencesDiv")
-drawCard("rm.jpg", "RPG Maker", "Le principal jeu sur lequel je travaille représente bien ma personnalité: un peu absurde", 3, "competencesDiv")

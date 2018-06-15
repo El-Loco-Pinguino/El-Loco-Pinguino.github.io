@@ -32,7 +32,7 @@ h4 {
 
 .card {
     padding: 0 0.5em;
-    margin: 0.5em;
+    margin: 0.5em 0;
     border: 2px solid #222;
     box-shadow: 2px 2px;
 }
