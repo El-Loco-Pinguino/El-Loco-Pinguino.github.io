@@ -60,8 +60,10 @@
     </div>
 
     <p id="scoreIndication"></p>
+    <p id="historique"></p>
 
     <script>
+        let totaux = []
         const lancerDe = () => {
             const des = document.getElementsByClassName("de")
             let scores = []
@@ -121,8 +123,13 @@
                 scores.push(score)
                 de.innerHTML = score
             }
-
-            document.getElementById("scoreIndication").innerHTML = "<p>" + scores.reduce((el, acc) => (el + acc), 0) + " points </p>"
+            const total = scores.reduce((el, acc) => (el + acc), 0)
+            totaux.push(total)
+            const min = Math.min(...totaux)
+            const max = Math.max(...totaux)
+            const moyenne = (totaux.reduce((el, acc) => (el + acc), 0) / totaux.length)
+            document.getElementById("scoreIndication").innerHTML = "<p>" + total + " points</p>"
+            document.getElementById("historique").innerHTML = "<ul><li>Minimum: " + min + "</li><li>Maximum: " + max + "</li><li>Moyenne: " + moyenne + "</li></ul>"
         }
     </script>
 </body>
