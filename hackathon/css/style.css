@@ -25,7 +25,8 @@
     top: 7.92%;
     width: 44.22%;
     height: 33%;
-    background-color: red;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .bottomScreen {
