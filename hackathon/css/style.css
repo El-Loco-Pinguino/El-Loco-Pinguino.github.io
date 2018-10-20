@@ -1,0 +1,39 @@
+.game {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./../res/bg1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.dsScreen {
+    width: 75vmin;
+    height: 75vmin;
+    background-image: url("./../res/ds.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.topScreen {
+    position: absolute;
+    left: 27.56%;
+    top: 7.92%;
+    width: 44.22%;
+    height: 33%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bottomScreen {
+    position: absolute;
+    left: 27.56%;
+    bottom: 8.75%;
+    width: 44.22%;
+    height: 33%;
+    background-color: red;
+}
