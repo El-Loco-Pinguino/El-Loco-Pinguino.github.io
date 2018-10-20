@@ -25,6 +25,7 @@
     top: 7.92%;
     width: 44.22%;
     height: 33%;
+    background-image: url("./../res/bg_herbe.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
