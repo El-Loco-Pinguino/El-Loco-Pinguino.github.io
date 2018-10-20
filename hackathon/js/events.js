@@ -1,5 +1,13 @@
 const descriptionElement = document.getElementById("description")
 
+const lockTouch = () => {
+    document.getElementById("allowTouch").setAttribute("id", "noTouch")
+}
+
+const permitTouch = () => {
+    document.getElementById("noTouch").setAttribute("id", "allowTouch")
+}
+
 const showEvent = (xPos, yPos) => {
     if (xPos === 0 && yPos === 0) {
         if (!items.seeds) {
@@ -27,6 +35,7 @@ const showEvent = (xPos, yPos) => {
     if (xPos === 0 && yPos === 6) {
         if (!items.money) {
             descriptionElement.innerText = "Un gobelin me barre le passage. Il dit qu'il faut payer un péage pour passer par ici."
+            lockTouch()
             addButtonChoice(["Insister", "Faire demi-tour"])
         } else {
             descriptionElement.innerText = "Le gobelin péagiste est parti avec mon argent."
