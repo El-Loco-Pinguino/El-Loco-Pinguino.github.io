@@ -165,7 +165,7 @@ const showEvent = (xPos, yPos) => {
     }
     if (xPos === 3 && yPos === 4) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Me voilà au beau milieu de nulle part. Une princesse doit être retrouvée. Utilisez l'écran tactile pour vous déplacer."
+        descriptionElement.innerText = "Me voilà au beau milieu de nulle part. Une princesse doit être retrouvée. Glissez votre doigt/pointeur sur l'écran tactile dans une direction pour partir vers cette dernière."
     }
     if (xPos === 3 && yPos === 5) {
         updateImage("bg_herbe.png")
