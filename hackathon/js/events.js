@@ -20,23 +20,23 @@ const showEvent = (xPos, yPos) => {
     }
     if (xPos === 0 && yPos === 1) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Il y a plein de champignons autour de moi. Je n'en avais jamais vu de cette couleur-ci."
     }
     if (xPos === 0 && yPos === 2) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Un sentier très tranquille. Je vois des écureuils passer devant moi. Que c'est mignon !"
     }
     if (xPos === 0 && yPos === 3) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Un aigle vole en direction des montagnes !"
     }
     if (xPos === 0 && yPos === 4) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Je devrais songer à prendre note des endroits où je passe. Je pense que ça serait plus qu'utile."
     }
     if (xPos === 0 && yPos === 5) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Ah. Des gros rochers délimitent l'endroit d'où je suis actuellement du désert."
     }
     if (xPos === 0 && yPos === 6) {
         updateImage("bg_desert.png")
@@ -50,39 +50,44 @@ const showEvent = (xPos, yPos) => {
     }
     if (xPos === 0 && yPos === 7) {
         updateImage("bg_desert.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Plusieurs scorpions sont visibles au loin. La faune est très variée."
     }
     if (xPos === 1 && yPos === 0) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Je commence à fatiguer un peu à force de marcher tout le temps ! Je me reposerais bien un peu."
     }
     if (xPos === 1 && yPos === 1) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Quelle verdure... L'air est tellement pur."
     }
     if (xPos === 1 && yPos === 2) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Des arbres géants sont tout autour de moi ! J'en ai mal au cou à regarder leur cîme."
     }
     if (xPos === 1 && yPos === 3) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Un deux trois nous irons au bois ! Faisons gaffe au loup quand même."
     }
     if (xPos === 1 && yPos === 4) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Il n'y a personne dans les parages. Que c'est calme... À part les oiseaux qui chantent, bien sûr."
     }
     if (xPos === 1 && yPos === 5) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Il y a plein de coccinelles sur les troncs. De toutes les couleurs j'aime en voir !"
     }
     if (xPos === 1 && yPos === 6) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        if (!items.cape) {
+            descriptionElement.innerText = "Ce gobelin gardait une cape chauffante. Elle me sera utile pour m'aventurer dans la plaine enneigée."
+            items.cape = true
+        } else {
+            descriptionElement.innerText = "Il n'y a rien à faire par ici."
+        }
     }
     if (xPos === 1 && yPos === 7) {
         updateImage("bg_desert.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Il n'y a aucune végétation par ici. Que c'est triste ce désert..."
     }
     if (xPos === 1 && yPos === 11) {
         updateImage("bg_neige.png")
@@ -94,19 +99,19 @@ const showEvent = (xPos, yPos) => {
     }
     if (xPos === 2 && yPos === 0) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Ça manque de bâtiments par ici. Quel est cet endroit dans lequel j'ai atterri ?"
     }
     if (xPos === 2 && yPos === 1) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "On entend le bruit de la rivière. L'eau est tellement pure."
     }
     if (xPos === 2 && yPos === 2) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "J'ai le nez qui me grattouille un peu... Sans doute le pollen."
     }
     if (xPos === 2 && yPos === 3) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Un conseil: je devrais faire un plan de cet endroit. Je pense que ça m'aiderait pour plus tard."
     }
     if (xPos === 2 && yPos === 4) {
         updateImage("bg_herbe.png")
@@ -122,7 +127,7 @@ const showEvent = (xPos, yPos) => {
     }
     if (xPos === 2 && yPos === 7) {
         updateImage("bg_desert.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Je ne vois que du sable, du sable, et encore que du sable !"
     }
     if (xPos === 2 && yPos === 8) {
         updateImage("bg_desert.png")
@@ -214,15 +219,15 @@ const showEvent = (xPos, yPos) => {
     }
     if (xPos === 4 && yPos === 7) {
         updateImage("bg_desert.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Je m'ennuie... Il n'y a personne dans les parages !"
     }
     if (xPos === 4 && yPos === 8) {
         updateImage("bg_desert.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Le sable chaud me brûle les pieds. Je devrais faire vite."
     }
     if (xPos === 4 && yPos === 9) {
         updateImage("bg_desert.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Il n'y a qu'un pas entre le sable, la neige, et la verdure ! Aucune logique."
     }
     if (xPos === 4 && yPos === 10) {
         updateImage("bg_neige.png")
