@@ -91,7 +91,9 @@ const showEvent = (xPos, yPos) => {
     }
     if (xPos === 1 && yPos === 11) {
         updateImage("bg_neige.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "!!! La princesse est inconsciente ! Elle a sans doute pris froid. Est-ce que je dois l'aider ?"
+            lockTouch()
+            addButtonChoice(["La secourir", "Ne rien faire"])
     }
     if (xPos === 1 && yPos === 12) {
         updateImage("bg_neige.png")
@@ -115,15 +117,15 @@ const showEvent = (xPos, yPos) => {
     }
     if (xPos === 2 && yPos === 4) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Une petite brise de l'ouest souffle. C'est très agréable."
     }
     if (xPos === 2 && yPos === 5) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Un sentier sinueux. Pourquoi tout n'est pas fait de lignes droites ? Ça me fait marcher plus pour pas grand-chose."
     }
     if (xPos === 2 && yPos === 6) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "J'entends des gobelins gromeller au loin. J'ai l'impression d'être le héros d'un RPG !"
     }
     if (xPos === 2 && yPos === 7) {
         updateImage("bg_desert.png")
@@ -139,27 +141,27 @@ const showEvent = (xPos, yPos) => {
     }
     if (xPos === 2 && yPos === 11) {
         updateImage("bg_neige.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Je m'enfonce dans les plaines enneigées. Je pense qu'on est près de la fin, et de la faim."
     }
     if (xPos === 2 && yPos === 12) {
         updateImage("bg_neige.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Je ne comprends pas comment peut-on ne pas aimer mon humour."
     }
     if (xPos === 3 && yPos === 0) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Cette vallée est assez escarpée. Je pense qu'il pourrait y avoir quelque chose au bout du chemin."
     }
     if (xPos === 3 && yPos === 1) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Une vallée est à proximité. La montagne et la plaine ne forment plus qu'un seul corps..."
     }
     if (xPos === 3 && yPos === 2) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Une petite grotte se trouve devant moi. On pourrait trouver quelque chose dedans."
     }
     if (xPos === 3 && yPos === 3) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Je réalise à peine que je suis au beau milieu d'un endroit complétement inconnu. Qui sait ce que je pourrai trouver ici ?"
     }
     if (xPos === 3 && yPos === 4) {
         updateImage("bg_herbe.png")
@@ -167,19 +169,19 @@ const showEvent = (xPos, yPos) => {
     }
     if (xPos === 3 && yPos === 5) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Beurk, un écureuil mort ! Ça ne présage rien de bon."
     }
     if (xPos === 3 && yPos === 6) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Si seulement j'avais pris mon ordinateur... Enfin, Internet n'existe pas ici !"
     }
     if (xPos === 3 && yPos === 7) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Des petites dunes de sable autour de moi. Le désert n'est pas loin."
     }
     if (xPos === 3 && yPos === 8) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Cerné par le sable du désert, cet espace de verdure restreint tente de lutter face aux pouvoirs de Mère Nature."
     }
     if (xPos === 3 && yPos === 9) {
         updateImage("bg_desert.png")
@@ -187,35 +189,46 @@ const showEvent = (xPos, yPos) => {
     }
     if (xPos === 3 && yPos === 10) {
         updateImage("bg_neige.png")
-        descriptionElement.innerText = "C'est quand même bizarre comment la prairie, le désert et la plaine enneigée se côtoient !"
+        if (!items.cape) {
+            descriptionElement.innerText = "Quel froid violent ! Je ne peux pas continuer."
+            lockTouch()
+            addButtonChoice(["Lutter au froid", "Abandonner"])
+        } else {
+            descriptionElement.innerText = "C'est quand même bizarre comment la prairie, le désert et la plaine enneigée se côtoient !"
+        }
     }
     if (xPos === 3 && yPos === 11) {
         updateImage("bg_neige.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "De la neige, de la neige, et encore de la neige ! Bienvenue au Canada !"
     }
     if (xPos === 3 && yPos === 12) {
         updateImage("bg_neige.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Yéti, y es-tu ? Enfin, vaudrait mieux pas. Parce qu'il peut mesurer plus de 3 mètres !"
     }
     if (xPos === 4 && yPos === 2) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Il fait sombre ! Je devrais rester sur mes gardes."
     }
     if (xPos === 4 && yPos === 3) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Aïe ! Je me suis pris un mur ! Il faut faire demi-tour."
     }
     if (xPos === 4 && yPos === 4) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "J'entends des oiseaux chanter. Que c'est apaisant..."
     }
     if (xPos === 4 && yPos === 5) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Je réfléchis à ce que je pourrais rencontrer ici. Un dragon ? Un clown tueur ? Le Grand Méchant Loup ? Faites vos jeux !"
     }
     if (xPos === 4 && yPos === 6) {
         updateImage("bg_herbe.png")
-        descriptionElement.innerText = "Crayon !"
+        if (!items.money) {
+            descriptionElement.innerText = "Un peu d'argent. Y a pas de bar-tabac dans les environs, mais ça pourrait me servir."
+            items.money = true
+        } else {
+            descriptionElement.innerText = "Il n'y a rien à faire par ici."
+        }
     }
     if (xPos === 4 && yPos === 7) {
         updateImage("bg_desert.png")
@@ -231,15 +244,21 @@ const showEvent = (xPos, yPos) => {
     }
     if (xPos === 4 && yPos === 10) {
         updateImage("bg_neige.png")
-        descriptionElement.innerText = "Crayon !"
+        if (!items.cape) {
+            descriptionElement.innerText = "Quel froid violent ! Je ne peux pas continuer."
+            lockTouch()
+            addButtonChoice(["Lutter au froid", "Abandonner"])
+        } else {
+            descriptionElement.innerText = "Mon beau copain, roi des gélées, est-ce que tu pourrais m'aider ?"
+        }
     }
     if (xPos === 4 && yPos === 11) {
         updateImage("bg_neige.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Les neiges du Kilimandjaro... Je ne sais plus qui c'est qui chantait cette chanson. Peut-être Mort Schuman ?"
     }
     if (xPos === 4 && yPos === 12) {
         updateImage("bg_neige.png")
-        descriptionElement.innerText = "Crayon !"
+        descriptionElement.innerText = "Ah... si seulement la température actuelle était en Fahrenheit ! On aurait plus chaud d'environ 15 degrés !"
     }
     if (xPos === 5 && yPos === 2) {
         updateImage("bg_herbe.png")
@@ -281,7 +300,13 @@ const showEvent = (xPos, yPos) => {
     }
     if (xPos === 5 && yPos === 10) {
         updateImage("bg_neige.png")
-        descriptionElement.innerText = "J'ai l'impression d'être la Reine des Neiges ! Le paysage est paralysé par le gel."
+        if (!items.cape) {
+            descriptionElement.innerText = "Quel froid violent ! Je ne peux pas continuer."
+            lockTouch()
+            addButtonChoice(["Lutter au froid", "Abandonner"])
+        } else {
+            descriptionElement.innerText = "J'ai l'impression d'être la Reine des Neiges ! Le paysage est paralysé par le gel."
+        }
     }
     if (xPos === 5 && yPos === 11) {
         updateImage("bg_neige.png")
