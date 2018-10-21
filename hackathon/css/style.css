@@ -1,4 +1,10 @@
+@font-face {
+    font-family: "VT323", monospace;
+    src: url("./VT323-Regular.ttf");
+}
+
 .game {
+    font-family: "VT323";
     width: 100vw;
     height: 100vh;
     background-image: url("./../res/bg1.png");
@@ -36,7 +42,6 @@
     bottom: 8.75%;
     width: 44.22%;
     height: 33%;
-    background-color: red;
 }
 
 .bottomScreen + #allowTouch {
@@ -51,4 +56,17 @@
     width: 44.22%;
     height: 33%;
     background-color: green;
+}
+
+#description {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 2px;
+}
+
+button {
+    display: block;
+    width: 80%;
+    margin: 0.5em auto;
+    border-radius: 20%;
+    font-size: 0.75em;
 }
