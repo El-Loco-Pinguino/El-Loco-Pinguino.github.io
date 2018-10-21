@@ -1,28 +1,27 @@
-<!doctype html>
-<html lang="fr">
+<html xmlns:og="http://ogp.me/ns#" lang="fr">
   <head>
     <title>Les aventures de Flo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Les aventures de Flo"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://el-loco-pinguino.github.io"/>
+    <meta property="og:image" content="https://el-loco-pinguino.github.io/home/ds.png"/>
+    <meta property="og:description" content="Un jeu programmé à l'occasion d'un hackathon entre amis"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <section class="game">
-        <div class="dsScreen">
-            <div class="topScreen" id="action">
-                <p id="description">Me voilà au beau milieu de nulle part. Une princesse doit être retrouvée. Glissez votre doigt/pointeur sur l'écran tactile dans une direction pour partir vers cette dernière.</p>
-            </div>
-            <div class="bottomScreen" id="touch"></div>
-            <div class="bottomScreen" id="allowTouch"></div>
+      <div class="dsScreen">
+        <div class="topScreen" id="action">
+          <p id="description">Me voilà au beau milieu de nulle part. Une princesse doit être retrouvée. Glissez votre doigt/pointeur sur l'écran tactile dans une direction pour partir vers cette dernière.</p>
         </div>
+        <div class="bottomScreen" id="touch"></div>
+        <div class="bottomScreen" id="allowTouch"></div>
+      </div>
     </section>
-    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
     <script src="./js/hammer.min.js"></script>
     <script src="./js/swipe.js"></script>
     <script src="./js/map.js"></script>
