@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>04 - Array cardio</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1>Manipulation d'arrays</h1>
+        <h2>Filter</h2>
+            <ul id="filter" class="list-group mb-5">
+
+            </ul>
+
+        <h2>Map</h2>
+            <ul id="map" class="list-group mb-5">
+
+            </ul>
+
+        <h2>Sort</h2>
+            <ul id="sort" class="list-group mb-5">
+
+            </ul>
+
+        <h2>Reduce</h2>
+            <ul id="reduce" class="list-group mb-5">
+
+            </ul>
+
+        <h2>Espérance de vie</h2>
+            <ul id="yearsLived" class="list-group mb-5">
+
+            </ul>
+
+        <h2>Boulevards comprenant "de" dans leur nom</h2>
+            <ul id="boulevards" class="list-group mb-5">
+
+            </ul>
+
+        <h2>Tri par nom de famille</h2>
+            <ul id="lastNameSort" class="list-group mb-5">
+
+            </ul>
+
+        <h2>Compter des items</h2>
+            <ul id="sumUp" class="list-group mb-5">
+
+            </ul>
+
+        <script>
+            const inventors = [
+                { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
+                { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
+                { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
+                { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
+                { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
+                { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
+                { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
+                { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },
+                { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },
+                { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },
+                { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
+                { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
+            ]
+
+            const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry', 'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul', 'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David', 'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana', 'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black, Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William']
+
+            // Array.prototype.filter()
+            const born1500 = inventors.filter(el => el.year >= 1500 && el.year < 1600)
+            born1500.forEach(el => document.getElementById("filter").innerHTML += `<li class="list-group-item">${el.first} ${el.last} est né(e) en ${el.year}</li>`)
+
+            // Array.prototype.map()
+            const names = inventors.map(el => `${el.first} ${el.last}`)
+            names.forEach(el => document.getElementById("map").innerHTML += `<li class="list-group-item">${el}</li>`)
+
+            // Array.prototype.sort()
+            const sortBirth = inventors.sort((a, b) => (a.year - b.year))
+            sortBirth.forEach(el => document.getElementById("sort").innerHTML += `<li class="list-group-item">${el.first} ${el.last} est né(e) en ${el.year}</li>`)
+
+            // Array.prototype.reduce()
+            const lived = inventors.reduce((total, inventor) => total + (inventor.passed - inventor.year), 0)
+            document.getElementById("reduce").innerHTML += `<li class="list-group-item">Les inventeurs ont vécu durant ${lived} années au total</li>`
+
+            // 5. Sort the inventors by years lived
+            const oldest = inventors.sort((a, b) => {
+                const last = a.passed - a.year
+                const next = b.passed - b.year
+                return last > next ? -1 : 1
+            })
+            oldest.forEach(el => document.getElementById("yearsLived").innerHTML += `<li class="list-group-item">${el.first} ${el.last} a vécu pendant ${el.passed - el.year} années</li>`)
+
+            // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+            const listOfBoulevards = [
+                "Boulevard Auguste-Blanqui",
+                "Boulevard Barbès",
+                "Boulevard Beaumarchais",
+                "Boulevard de l'Amiral-Bruix",
+                "Boulevard des Capucines",
+                "Boulevard de la Chapelle",
+                "Boulevard de Clichy",
+                "Boulevard du Crime",
+                "Boulevard Haussmann",
+                "Boulevard de l'Hôpital",
+                "Boulevard des Italiens",
+                "Boulevard de la Madeleine",
+                "Boulevard de Magenta",
+                "Boulevard Montmartre",
+                "Boulevard du Montparnasse",
+                "Boulevard Raspail",
+                "Boulevard Richard-Lenoir",
+                "Boulevard de Rochechouart",
+                "Boulevard Saint-Germain",
+                "Boulevard Saint-Michel",
+                "Boulevard de Sébastopol",
+                "Boulevard de Strasbourg",
+                "Boulevard du Temple",
+                "Boulevard Voltaire",
+                "Boulevard de la Zone"
+            ]
+
+            const containDe = listOfBoulevards.filter(boulevard => boulevard.includes("de"))
+            containDe.forEach(el => document.getElementById("boulevards").innerHTML += `<li class="list-group-item">${el}</li>`)
+
+            // 7. sort Exercise
+            const sortByLast = people.sort((invLast, invNext) => {
+                const [aLast, aFirst] = invLast.split(", ")
+                const [bLast, bFirst] = invNext.split(", ")
+                return aLast > bLast ? 1 : -1
+            })
+            sortByLast.forEach(el => document.getElementById("lastNameSort").innerHTML += `<li class="list-group-item">${el}</li>`)
+
+            // 8. Reduce Exercise
+            const data = ["Épée", "Arc", "Pistolet", "Épée", "Lance", "Arc", "Arc", "Sceptre", "Épée", "Sceptre", "Sabre", "Sabre", "Arc", "Épée", "Lance", "Lance", "Épée", "Sabre"]
+
+            const transportation = data.reduce((obj, item) => {
+                if (!obj[item]) {
+                    obj[item] = 0
+                }
+                obj[item]++
+                return obj
+            }, {})
+
+            for (let item in transportation) {
+                document.getElementById("sumUp").innerHTML += `<li class="list-group-item">${item} est présent en ${transportation[item]} exemplaire(s)</li>`
+            }
+        </script>
+    </body>
+</html>
