@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>05 - Flex panels of terror</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style>
+            html {
+                box-sizing: border-box;
+                background: #004;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 18px;
+                font-weight: 200;
+            }
+    
+            body {
+                margin: 0;
+            }
+
+            *, *:before, *:after {
+                box-sizing: inherit;
+            }
+
+            .panels {
+                min-height: 100vh;
+                overflow: hidden;
+                display: flex;
+            }
+
+            .panel {
+                background: #002;
+                box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+                color: white;
+                text-align: center;
+                align-items: center;
+                transition:
+                    font-size 0.7s cubic-bezier(0.61, -0.08, 0.75, -0.10),
+                    flex 0.7s cubic-bezier(0.61, -0.08, 0.75, -0.10),
+                    background 0.2s;
+                font-size: 20px;
+                background-size: cover;
+                background-position: center;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 20%;
+            }
+
+            .panel1 { background-image:url(https://i.imgur.com/o0s7FDO.jpg); }
+            .panel2 { background-image:url(https://pm1.narvii.com/6223/4b561e452cbb75ad11839c87933f91d1c67d13cc_hq.jpg); }
+            .panel3 { background-image:url(https://f4.bcbits.com/img/a2432954109_10.jpg); }
+            .panel4 { background-image:url(https://cdnb.artstation.com/p/assets/images/images/002/836/445/large/david-szilagyi-024-arbok-davidszilagyi-creepypokemon-lowres.jpg); }
+            .panel5 { background-image:url(https://kwgeek.com/wp-content/uploads/2018/07/Pok%C3%A9mon-%E2%98%86%E2%98%86%E2%98%86-Everyone%E2%80%99s-playing-Pokemon-Go-but-I%E2%80%99m-over-here-loosing-my-mind-ov.jpg); }
+    
+            .panel > * {
+                margin: 0;
+                width: 100%;
+                transition: transform 0.5s;
+                flex: 1 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .panel > *:first-child {
+                transform: translateY(-100%);
+            }
+
+            .panel.open-active > *:first-child {
+                transform: translateY(0);
+            }
+
+            .panel > *:last-child {
+                transform: translateY(100%);
+            }
+
+            .panel.open-active > *:last-child {
+                transform: translateY(0);
+            }
+
+            .panel p {
+                text-transform: uppercase;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                text-shadow: 0 0 4px rgba(120, 120, 255, 0.72), 0 0 14px rgba(120, 120, 255, 0.45);
+                font-size: 1.25em;
+                color: #001;
+            }
+    
+            .panel p:nth-child(2) {
+                font-size: 1.5em;
+            }
+
+            .panel.open {
+                font-size: 32px;
+                flex: 5;
+            }
+        </style>
+    </head>
+    <body>        
+        <div class="panels">
+            <div class="panel panel1">
+                <p>Terreur</p>
+                <p>Frayeur</p>
+                <p>Peur</p>
+            </div>
+            <div class="panel panel2">
+                <p>Phobie</p>
+                <p>Ténèbres</p>
+                <p>Panique</p>
+            </div>
+            <div class="panel panel3">
+                <p>Paranoïa</p>
+                <p>Spectres</p>
+                <p>Horreur</p>
+            </div>
+            <div class="panel panel4">
+                <p>Effroi</p>
+                <p>Danger</p>
+                <p><s>Réchaud</s></p>
+            </div>
+            <div class="panel panel5">
+                <p>Frissons</p>
+                <p>Épouvante</p>
+                <p>Craintes</p>
+            </div>
+        </div>
+        <script>
+            const panels = document.querySelectorAll(".panel")
+
+            function toggleOpen() {
+                this.classList.toggle("open")
+            }
+
+            function toggleActive(e) {
+                if (e.propertyName.includes("flex")) {
+                    this.classList.toggle("open-active")
+                }
+            }
+
+            panels.forEach(panel => panel.addEventListener("click", toggleOpen))
+            panels.forEach(panel => panel.addEventListener("transitionend", toggleActive))
+        </script>
+    </body>
+</html>
