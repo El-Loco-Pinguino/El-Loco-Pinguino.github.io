@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>07 - Array cardio II</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1>Analyse d'arrays</h1>
+        <h2>Tableaux originels</h2>
+        <table class="table table-hover table-responsive">
+            <thead class="thead-default">
+                <tr>
+                    <th>Club</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">Dortmund</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td scope="row">Séville</td>
+                    <td>19</td>
+                </tr>
+                <tr>
+                    <td scope="row">Liverpool</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td scope="row">Marseille</td>
+                    <td>-7</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-hover table-responsive">
+            <thead class="thead-default">
+                <tr>
+                    <th>Joueur</th>
+                    <th>Numéro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">Raymond Kopa</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td scope="row">José Truc</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td scope="row">Frank Cou</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td scope="row">Le comte des CSC</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td scope="row">Pénalty-Man</td>
+                    <td>20</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Some</h2>
+        <p>Y a-t-il au moins une équipe qui possède plus de 20 points ?</p>
+        <small>Résultat prévu:<br/>Oui: Dortmund (27) et Liverpool (23)</small>
+        <div class="alert alert-info" role="alert">
+            Some renvoie <strong id="some"></strong>
+        </div>
+
+        <h2>Every</h2>
+        <p>Toutes les équipes ont-elles un nom de 8 lettres ou plus ?</p>
+        <small>Résultat prévu:<br/>Non: Séville (7)</small>
+        <div class="alert alert-info" role="alert">
+            Every renvoie <strong id="every"></strong>
+        </div>
+
+        <h2>Find</h2>
+        <p>Quel joueur possède le numéro 2 ?</p>
+        <small>Résultat prévu:<br/>Le comte des CSC</small>
+        <div class="alert alert-info" role="alert">
+            Find renvoie <strong id="find"></strong>
+        </div>
+
+        <h2>FindIndex</h2>
+        <p>Quel est l'index de Frank Cou ?</p>
+        <small>Résultat prévu:<br/>2</small>
+        <div class="alert alert-info" role="alert">
+            FindIndex renvoie <strong id="findIndex"></strong>
+        </div>
+
+        <script>
+            const clubs = [
+                { name: 'Dortmund', points: 27 },
+                { name: 'Séville', points: 19 },
+                { name: 'Liverpool', points: 23 },
+                { name: 'Marseille', points: -7 }
+            ]
+
+            const players = [
+                { name: 'Raymond Kopa', number: 12 },
+                { name: 'José Truc', number: 9 },
+                { name: 'Frank Cou', number: 10 },
+                { name: 'Le comte des CSC', number: 2 },
+                { name: 'Pénalty-Man', number: 20 }
+            ]
+
+            const overTwenty = clubs.some(club => club.points >= 20)
+            if (overTwenty) {
+                document.getElementById("some").innerText = "true"
+            } else {
+                document.getElementById("some").innerText = "false"
+            }
+
+            const eightLetters = clubs.every(club => club.name.length > 8)
+            if (eightLetters) {
+                document.getElementById("every").innerText = "true"
+            } else {
+                document.getElementById("every").innerText = "false"
+            }
+
+            const who2 = players.find((player) => {
+                return player.number === 2
+            })
+            if (who2) {
+                document.getElementById("find").innerText = who2.name
+            } else {
+                document.getElementById("find").innerText = "Rien trouvé"
+            }
+
+            const findFrank = players.findIndex((player) => player.name.includes("Frank"))
+            if (findFrank) {
+                document.getElementById("findIndex").innerText = findFrank
+            } else {
+                document.getElementById("findIndex").innerText = "Rien trouvé"
+            }
+        </script>
+    </body>
+</html>
