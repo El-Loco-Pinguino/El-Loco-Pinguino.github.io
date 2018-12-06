@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>09 - Console.log</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1>Combines de console.log</h1>
+        <p>Copiez-collez ces codes dans la console pour les voir en action.</p>
+        <h2>Traditionnel</h2>
+        <code>console.log("Je suis une huître !")</code>
+        <p>Le vieux de la vieille ?</p>
+        <h2>Interpolation</h2>
+        <code>console.log("Je suis un %s !", "saligaud")</code>
+        <p>Les backquotes ont pris la place de %s.</p>
+        <h2>Stylisation</h2>
+        <code>console.log("%c Ce texte est une oeuvre d'art.", "font-family: fantasy; color: pink; text-shadow: 2px 2px solid blue;")</code>
+        <p>Ça n'apporte rien en vrai, mais que c'est beau !</p>
+        <h2>Avertissement</h2>
+        <code>console.warn("Présence de gilets jaunes à proximité. Veuillez rester sur vos gardes.")</code>
+        <p>Pour faire parvenir un message négatif sans conséquences graves.</p>
+        <h2>Erreur</h2>
+        <code>console.error("Rendez-vous en prison. Ne passez pas par la case départ, ne touchez pas les 200&euro;.")</code>
+        <p>Pour faire parvenir un message négatif. Accusez le visiteur d'avoir tout cassé !</p>
+        <h2>Information</h2>
+        <code>console.info("La récursivité est très utile dans le domaine des mathématiques.")</code>
+        <p>Une info, à titre d'information.</p>
+        <h2>Test logique</h2>
+        <code>console.assert("2 + 2 === 5", "Tu sais pas compter ?")</code>
+        <p>Le message ne sert que lorsque votre test est faux.</p>
+        <h2>Purger la console</h2>
+        <code>console.clear()</code>
+        <p>Nettoyer, balayer, astiquer le contenu de votre console !</p>
+        <h2>Accéder au DOM</h2>
+        <code id="ex">console.dir(document.getElementById("ex"))</code>
+        <p>Équivaut à un console.log de votre élément de DOM.</p>
+        <h2>Regroupement</h2>
+        <code>
+        characters.forEach(char => {<br/>
+        console.group(char.name)<br/>
+        console.log(`${char.name} possède ${char.hp} points de vie`)<br/>
+        console.groupEnd(char.name)<br/>
+        })
+        </code>
+        <p>Rassemblez vos console.log.</p>
+        <h2>Compteur</h2>
+        <code>
+        console.count("Combien ?")<br/>
+        console.count("Combien ?")<br/>
+        console.count("Combien ?")<br/>
+        console.count("Combien ?")<br/>
+        console.count("Combien ?")
+        </code>
+        <p>Combien de fois le mot "Combien ?" est-il apparu ?</p>
+        <h2>Chronomètre</h2>
+        <code>console.time("Génération des 2000 premiers termes de la suite de Fibonacci...")</code><br/>
+        <code>let fi = [1, 1]<br/>
+        for (let a = 2; a < 2000; a++) {<br/>
+        fi.push(fi[a - 2] + fi[a - 1])<br/>
+        }
+        </code><br/>
+        <code>console.timeEnd("Génération des 2000 premiers termes de la suite de Fibonacci...")</code>
+        <p>Déterminez le temps d'exécution de votre code.</p>
+        <script>
+            const characters = [{name: "Enoriel", hp: 2897}, {name: "Rieleno", hp: 1786}, {name: "Elenori", hp: 3998}]
+        </script>
+    </body>
+</html>
