@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <title>10 - Shift pour cases à cocher</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/10.css">
+  </head>
+  <body>
+    <div class="inbox">
+        <div class="item">
+            <input type="checkbox">
+            <p>Une case à cocher</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>La petite combine. Cochez une case en laissant SHIFT appuyé...</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Et puis cochez en une autre</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Voilà, toutes les cases entre elles ont été cochées !</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>C'est une man&oelig;uvre simpliste</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Dont j'avais déjà une petite idée de comment faire</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Avec un peu de DOM</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Puisque le DOM c'est mon DOMaine, ou mon DOM'Aisne !</p>
+        </div>
+    </div>
+
+    <script>
+        const checkboxes = document.querySelectorAll(".inbox input[type='checkbox']")
+        let lastChecked
+        function handleCheck(e) {
+            let inBetween = false
+            if (e.shiftKey && this.checked) {
+                checkboxes.forEach(checkbox => {
+                    if (checkbox === this || checkbox == lastChecked) {
+                        inBetween = !inBetween
+                    }
+                    if (inBetween) {
+                        checkbox.checked = true
+                    }
+                })
+            }
+
+            lastChecked = this
+        }
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener("click", handleCheck)
+        })
+
+    </script>
+  </body>
+</html>
