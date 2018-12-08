@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>12 - Key Sequence Detection</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style>
+            body {
+                margin: 0;
+            }
+
+            body.done {
+                background: url("./assets/teamrocketblastingoffagain.gif") no-repeat;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Pour envoyer la Team Rocket vers d'autres cieux, tapez <em>pikachu</em> !</h1>
+        <audio src="./assets/unefoisdeplus.mp3" id="jingle"></audio>
+        <script>
+            const pressed = []
+            const secretCode = "pikachu"
+            let activated = false
+            window.addEventListener("keyup", (e) => {
+                pressed.push(e.key.toLowerCase())
+                pressed.slice(-secretCode.length - 1, pressed.length - secretCode.length)
+
+                if (pressed.join("").includes(secretCode) && !activated) {
+                    activated = true
+                    document.getElementsByTagName("body")[0].classList.add("done")
+                    document.getElementsByTagName("h1")[0].innerText = "Une fois de plus la Team Rocket s'envole vers d'autres cieux !"
+                    document.getElementById("jingle").play()
+                }
+            })
+        </script>
+    </body>
+</html>
