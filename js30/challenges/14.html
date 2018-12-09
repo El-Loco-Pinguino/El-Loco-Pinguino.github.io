@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>14 - JS Référence versus Copie</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1>Manipulation de tableaux, copie et référence</h1>
+        <p>On imagine le tableau suivant:</p>
+        <code>const elements = ["Azote", "Bore", "Cuivre", "Dubnium", "Europium", "Fer"]</code>
+        <p>J'aimerais copier ce tableau.</p>
+        <code>const duplicate = elements</code>
+        <p>Tout va bien. Je souhaite remplacer dans "duplicate" le "Dubnium" par "Dora l'Exploratrice".</p>
+        <code>duplicate[3] = "Dora l'Exploratrice"</code>
+        <p>J'affiche les tableaux.</p>
+        <code>
+            console.log(elements)<br/>
+            console.log(duplicate)
+        </code>
+        <div class="alert alert-danger" role="alert">
+            <strong>Fichtre alors ! En modifiant le tableau "duplicate", ça a également modifié le tableau "elements" !</strong>
+        </div>
+        <p>
+            En fait, avec
+            <code>const duplicate = elements</code>,
+            j'ai créé un alias de elements nommé duplicate. Si je modifie l'un d'eux, l'autre sera également modifié.
+            C'est comme si je disais x = 4 ; puis y = x. En changeant y, je change x et vice-versa.
+        </p>
+        <p>Mais comment copier un tableau sans que ça ne modifie tout ?</p>
+        <h2>Travailler avec des tableaux</h2>
+        <h3>Array.slice()</h3>
+        <p>Un <code>elements.slice()</code> est suffisant.</p>
+        <h3>Array.concat</h3>
+        <p><code>[].concat(elements)</code> copie le contenu de elements dans un nouveau tableau vierge.</p>
+        <h3>Spread operator</h3>
+        <p>Ce sont les 3 points magiques qui permettent de dupliquer un tableau.</p>
+        <code>[...elements]</code>
+        <h3>Array.from()</h3>
+        <p>Transforme l'argument en tableau. C'est utile quand nous travaillons sur un Set, pour enlever les doublons.</p>
+
+        <h2>Manipulation d'objets</h2>
+        <p>On peut faire à peu près la même chose pour les objets.</p>
+        <p>On imagine l'objet suivant:</p>
+        <code>const hero = {name: "Argh", hp: 1870}</code>
+        <p>Tout comme pour les tableaux, je ne peux pas référencer "hero" pour créer un autre objet et modifier une clé de celui-ci sans que ça ne se répercute sur l'objet initial !</p>
+        <h3>Object.assign({})</h3>
+        <p>Assign exige 3 paramètres: un objet (vide ou pas), l'objet cible, et un objet avec les propriétés à rajouter.</p>
+        <code>const duplicate = Object.assign({}, hero, {atk: 119})</code>
+        <h3>Spread operator, échec</h3>
+        <p>Ne marche que pour les tableaux, pas pour les objets !</p>
+        <p><code>const duplicate = {...hero}</code> provoquera une erreur...</p>
+        <h3>Pour des objets avec plusieurs niveaux</h3>
+        <code>JSON.parse(JSON.stringify(hero))</code>
+    </body>
+</html>
