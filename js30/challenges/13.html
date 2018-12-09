@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>13 - Slide-in on scroll</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="site-wrap">
+            <h1>La Slovénie</h1>
+            <p>La Slovénie, en forme longue la république de Slovénie, en slovène : Slovenija et Republika Slovenija, est un pays d’Europe centrale et membre de l'Union européenne. Elle est bordée par la mer Adriatique, l’Italie, l’Autriche, la Hongrie et la Croatie.</p>
+            <p>Au 20e siècle, elle fait partie de la Yougoslavie avant d'obtenir son indépendance le 25 juin 1991. Elle est membre de l'Union européenne depuis le 1er mai 2004 et a rejoint la zone euro, puis l'espace Schengen en 2007. Elle est membre de l'OTAN depuis le 29 mars 2004.</p>
+
+            <h2>Toponymie</h2>
+            <p>On retrouve la racine du nom de la Slovénie dans la contraction du mot slave (slovanska) et celui de vénète.</p>
+            <p>La Slovénie et la Slovaquie sont souvent confondues, car les noms Slovenská Republika (qui signifie République slovaque en slovaque) et Republika Slovenija peuvent prêter à confusion dans de nombreuses langues. Chaque année, un poids considérable de courrier mal acheminé est à réexpédier vers la Slovénie (600 kg en 2004). Cette confusion fait que le personnel des deux ambassades se retrouve chaque mois pour échanger le courrier mal adressé.</p>
+            <img src="https://www.routard.com/images_contenu/partir/destination/slovenie/carte/slovenie.gif" alt="Carte de la Slovénie" class="align-left slide-in">
+            <p>La Slovénie est parfois surnommée la Suisse des Balkans ou la Suisse d'Europe du Sud du fait de son relief montagneux.</p>
+
+            <h2>Histoire</h2>
+            <p>Celtes et Illyriens constituent les premiers habitants de l'Antiquité, et sont soumis à l'Empire romain au cours du premier siècle. La Carinthie émerge probablement autour du 6e siècle à l'issue des invasions lombardes du Nord de l'Italie, et recouvre le territoire correspondant aux actuelles Carinthies autrichienne et slovène. Si ses premiers temps restent indéterminés, son existence est formellement attestée au 8e siècle, lorsqu'elle prend son indépendance de la Bavière (746).</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Ferdinand_I_in_white_2.jpg/800px-Ferdinand_I_in_white_2.jpg" alt="Le Roi Ferdinand Premier d'Autriche, alias Ferdinand V (1793 - 1875)" class="align-right slide-in">
+            <p>Le territoire de l'actuelle Slovénie commence à partir du 9e siècle à passer de main en main au gré des invasions des puissances voisines, qu'il s'agisse de la Bavière, de la république de Venise, ou des Habsbourgs. Les Slovènes restent sous la domination de ces derniers du 14e siècle à 1918, sans réel statut juridique mais avec toutefois une représentation à Vienne.</p>
+            <p>La région subit successivement l'influence de la Réforme au 16e siècle, puis de la Contre-Réforme sous le règne de l'Archiduc Ferdinand d'Autriche au début du 17e siècle. Tandis que les élites se germanisent, la population paysanne demeure largement à l'écart de ces transformations. Des intellectuels codifient le slovène en une langue littéraire au 19e siècle, tandis que des revendications nationalistes commencent à se faire jour.</p>
+
+            <h2>Économie</h2>
+            <p>Avec sa petite économie de transition et une population d'approximativement deux millions d‘habitants, la Slovénie fut un modèle de succès économique et de stabilité pour ses voisins de l’ancienne Yougoslavie.</p>
+            <p>Le pays, qui a rejoint l’Union européenne en 2004, possède une main-d’&oelig;uvre de très bon niveau, un emplacement géographique stratégique et des infrastructures de bonne qualité.</p>
+            <p>L'économie slovène se caractérise par l'élevage, l'exploitation forestière et le tourisme, en particulier dans l'Ouest (sports d'hiver et d'été en montagne, stations balnéaires et thermales sur la côte istrienne) et dans la capitale. En raison de la grande superficie des forêts, l'industrie du bois est florissante et nombreuses sont les usines produisant de la pâte à papier. Le sous-sol possède du plomb et du zinc. Plus à l'est, le relief s'abaisse, et c'est dans cette région que les industries sont les plus développées (aluminium, métallurgie, construction mécanique, électro-ménager, charbon, centrale thermique, électronique, pharmacie, textile). Les usines automobiles du groupe Revoz, filiales de Renault, domiciliées à Novo Mesto, alimentent le marché national et écoulent en France une part importante de leur production. La capitale, Ljubljana, vit surtout du secteur tertiaire. Vers le sud, le haut Karst est largement boisé avec une agriculture peu développée.</p>
+            <p>La Slovénie affiche un PIB par habitant plus élevé que les autres pays d’Europe centrale et elle est devenue en 2004 le premier pays en transition d’une économie planifiée vers une économie de marché à passer du statut de pays emprunteur à partenaire donateur à la Banque mondiale. Elle a rejoint l'Eurogroupe le 1<sup>er</sup> janvier 2007.</p>
+            <p>La dette publique de la Slovénie s'élève à 63,2 % du PIB en 2013.</p>
+            <p>La Slovénie fait partie de la zone euro depuis le 1er janvier 2007 (1 euro valant 239,64 tolars). La Slovénie est ainsi devenue le premier pays à adopter la monnaie européenne après l’introduction fiduciaire de l’euro le 1er janvier 2002.</p>
+        </div>
+        <script>
+            function debounce(func, wait = 20, immediate = true) {
+                var timeout;
+                return function() {
+                    var context = this, args = arguments;
+                    var later = function() {
+                        timeout = null;
+                        if (!immediate) func.apply(context, args);
+                    };
+                    var callNow = immediate && !timeout;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                    if (callNow) func.apply(context, args);
+                };
+            }
+
+            const sliderImages = document.querySelectorAll(".slide-in")
+            function checkSlide(e) {
+                sliderImages.forEach(sliderImage => {
+                    const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2
+                    const imageBottom = sliderImage.offsetTop + sliderImage.height
+                    const isHalfShown = slideInAt > sliderImage.offsetTop
+                    const isNotScrolledPast = window.scrollY < imageBottom
+                    if (isHalfShown && isNotScrolledPast) {
+                        sliderImage.classList.add("active")
+                    } else {
+                        sliderImage.classList.remove("active")
+                    }
+                })
+            }
+
+            window.addEventListener("scroll", debounce(checkSlide))
+        </script>
+
+        <style>
+            html {
+                box-sizing: border-box;
+                background: #0000c0;
+                font-family: 'helvetica neue';
+                font-size: 18px;
+                font-weight: 300;
+            }
+
+            body {
+                margin: 0;
+            }
+
+            *, *:before, *:after {
+                box-sizing: inherit;
+            }
+
+            h1, h2 {
+                margin-top: 0;
+                clear: both;
+                color: #d60000;
+            }
+
+            .site-wrap {
+                max-width: 75vw;
+                margin: 75px auto;
+                background: white;
+                padding: 30px;
+                text-align: justify;
+            }
+
+            .align-left {
+                float: left;
+                margin-right: 25px;
+            }
+
+            .align-right {
+                float: right;
+                margin-left: 25px;
+            }
+
+            .slide-in {
+                opacity: 0;
+                transition: all .75s;
+                max-width: 250px;
+            }
+
+            .align-left.slide-in {
+                transform: translateX(-20%) scale(0.9);
+            }
+
+            .align-right.slide-in {
+                transform: translateX(20%) scale(0.9);
+            }
+
+            .slide-in.active {
+                opacity: 1;
+                transform: translateX(0%) scale(1);
+            }
+        </style>
+    </body>
+</html>
