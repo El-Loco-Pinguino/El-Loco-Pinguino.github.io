@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>15 - LocalStorage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/15.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <h2>Ma todo-list</h2>
+            <ul class="plates">
+                <li>Pour l'instant, rien</li>
+            </ul>
+            <form class="add-items">
+                <input type="text" name="item" placeholder="Qu'y a-t-il à faire ?" required>
+                <input type="submit" class="btn btn-primary" value="+ Ajouter tâche">
+            </form>
+        </div>
+
+        <script>
+            const addItems = document.querySelector('.add-items')
+            const itemsList = document.querySelector('.plates')
+            const items = JSON.parse(localStorage.getItem("items")) || []
+
+            function addItem(e) {
+                e.preventDefault()
+                const text = (this.querySelector("[name=item]")).value
+                const item = {
+                    text,
+                    done: false
+                }
+                items.push(item)
+                populateList(items, itemsList)
+                localStorage.setItem("items", JSON.stringify(items))
+                this.reset()
+            }
+
+            function toggleDone(e) {
+                if (!e.target.matches("input")) return
+                const index = e.target.dataset.index
+                items[index].done = !items[index].done
+                localStorage.setItem("items", JSON.stringify(items))
+                populateList(items, itemsList)
+            }
+
+            function populateList(items = [], itemsList) {
+                itemsList.innerHTML = items.map((item, i) => {
+                    return `
+                    <li>
+                        <input type="checkbox" data-index=${i} id="item${i}" ${item.done ? "checked" : "" }>
+                        <label for="item${i}">${item.text}</label>
+                    </li>
+                    `
+                }).join("")
+            }
+
+            addItems.addEventListener("submit", addItem)
+            itemsList.addEventListener("click", toggleDone)
+            populateList(items, itemsList)
+        </script>
+    </body>
+</html>
