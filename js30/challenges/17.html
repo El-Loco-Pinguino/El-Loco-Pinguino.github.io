@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>17 - Sort() sans articles</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style>
+            body {
+                margin: 0;
+                font-family: sans-serif;
+                background: url("https://www.jeparsauxusa.com/wp-content/uploads/2017/11/drive-in3.jpg");
+                background-size: cover;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-height: 100vh;
+            }
+
+            #movies {
+                font-size: 16px;
+                background: #8ad978;
+                width: 500px;
+                margin: auto;
+                padding: 0;
+                box-shadow: 0 0 0 20px rgba(138, 217, 120, 0.25);
+            }
+            
+            #movies li {
+                border-bottom: 2px solid #3a7928;
+                padding: 10px;
+            }
+            
+            #movies li:last-child {
+                border-bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="alert alert-info" role="alert">
+            <strong>Objectif: trier les films en ignorant les articles, c'est-à-dire que "<s>La</s> Mouche" (M) sera après "Love Actually" (L)</strong>
+        </div>
+
+        <ul class="list-group" id="movies">
+            
+        </ul>
+
+        <script>
+            const movies = [
+                "La Reine des neiges",
+                "La Fièvre du samedi soir",
+                "Touchez pas au grisbi",
+                "L'Exorciste",
+                "Love Actually",
+                "Vertigo",
+                "Tootsie",
+                "Le Roi Lion",
+                "Je vais bien ne t'en fais pas",
+                "La Mouche",
+                "La Famille Bélier"
+            ]
+
+            const strip = movieName => movieName.replace(/^(la|l'|le|les|un|une)/i, "").trim()
+
+            const sortedMovies = movies.sort((a, b) => strip(a) > strip(b) ? 1 : -1)
+
+            document.querySelector("#movies").innerHTML = sortedMovies.map(movie => `<li class="list-group-item">${movie}</li>`).join("")
+        </script>
+    </body>
+</html>
