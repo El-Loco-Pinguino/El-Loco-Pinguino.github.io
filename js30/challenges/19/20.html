@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>20 - Retranscription vocale</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="words" contenteditable>
+        
+        </div>
+        <script src="./20.js"></script>
+        <style>
+            html {
+                font-size: 12px;
+            }
+
+            body {
+                background: #8ad978;
+                font-family: 'helvetica neue';
+                font-weight: 300;
+                font-size: 18px;
+            }
+
+            .words {
+                max-width: 600px;
+                margin: 25px auto;
+                background: white;
+                border-radius: 5px;
+                box-shadow: 10px 10px 0 rgba(0,0,0,0.3);
+                padding: 1rem 2rem 1rem 5rem;
+                background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
+                background-size: 100% 3rem;
+                position: relative;
+                line-height: 2rem;
+            }
+                
+            p {
+                margin: 0 0 3rem;
+            }
+
+            .words:before {
+                content: '';
+                position: absolute;
+                width: 4px;
+                top: 0;
+                left: 30px;
+                bottom: 0;
+                border: 1px solid;
+                border-color: transparent #efe4e4;
+            }
+        </style>
+</body>
+</html>
