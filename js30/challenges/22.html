@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <title>22 - Liens en évidence</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style>
+            html {
+                box-sizing: border-box;
+            }
+
+            *, *:before, *:after {
+                box-sizing: inherit;
+            }
+
+            body {
+                min-height: 100vh;
+                margin: 0; /* Important! */
+                font-family: sans-serif;
+                background:
+                    linear-gradient(135deg, hsla(225, 95%, 50%, 1) 10%, hsla(225, 95%, 50%, 0) 80%),
+                    linear-gradient(225deg, hsla(225, 67%, 75%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);
+            }
+
+            .wrapper {
+                margin: 0 auto;
+                max-width: 750px;
+                font-size: 18px;
+                line-height: 1.75;
+                position: relative;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+                background: hsla(225,85%,75%,0.45);
+                padding: 0.5em 1.5em;
+                border-radius: 20px;
+            }
+            
+            a:hover, a:active, a:visited, a:link {
+                text-decoration: none;
+            }
+
+            .highlight {
+                transition: all 0.2s;
+                border-bottom: 2px solid white;
+                position: absolute;
+                top: 0;
+                background: white;
+                left: 0;
+                z-index: -1;
+                border-radius: 20px;
+                display: block;
+                box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            }
+
+            .menu {
+                padding: 0;
+                display: flex;
+                list-style: none;
+                justify-content: center;
+                margin:100px 0;
+            }
+
+            .menu a {
+                display: inline-block;
+                padding: 0.5em 1.5em;
+                margin: 0 20px;
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul class="menu">
+                <li><a href="">Elsa</a></li>
+                <li><a href="">Anna</a></li>
+                <li><a href="">Olaf</a></li>
+                <li><a href="">Le Père Noël</a></li>
+                <li><a href="">Dracula</a></li>
+                <li><a href="">Mister Freeze</a></li>
+                <li><a href="">Atchoum</a></li>
+            </ul>
+        </nav>
+        <div class="wrapper">
+            <p>L'hiver s'installe doucement dans la nuit, la neige est reine, à son tour.</p>
+            <p>Un <a href="">royaume de solitude</a>, ma place est là, pour toujours.</p>
+            <p>Le vent qui hurle en moi ne pense plus à demain...</p>
+            <p>Il est bien trop fort, j'ai lutté en vain...</p>
+            <p>Cache tes pouvoirs, n'en parle pas, fais attention <a href="">le secret</a> survivra !</p>
+            <p>Pas d'états d'âme, pas de tourments, de sentiments !</p>
+            <p>Libérée, délivrée, je ne mentirai plus jamais.</p>
+            <p>Libérée, délivrée, c'est décidé je m'en vais !</p>
+            <p>J'ai laissé, mon enfance en été, perdue dans l'hiver...</p>
+            <p>Le froid est pour moi le prix de la <a href="">liberté</a>.</p>
+            <hr>
+            <p>Quand on prend de la hauteur, tout semble insignifiant.</p>
+            <p>La tristesse, l'angoisse et la peur m'ont quittée depuis longtemps !</p>
+            <p>Je veux voir ce que je peux faire de <a href="">cette magie</a> pleine de mystères.</p>
+            <p>Le bien le mal je dis tant pis, tant pis !</p>
+            <p>Libérée, délivrée, les étoiles me tendent les bras ah ah!</p>
+            <p>Libérée, délivrée, non je ne pleure pas !</p>
+            <p>Me voilà, oui je suis là, perdue dans l'hiver...</p>
+            <hr>
+            <p>Mon pouvoir vient du ciel et envahit l'espace !</p>
+            <p>Mon âme s'exprime en dessinant et sculptant dans la glace !</p>
+            <p>Et les pensées sont des <a href="">fleurs de cristal</a> gelées !</p>
+            <p>Je ne reviendrai pas, le passé est passé !</p>
+            <p>Libérée, délivrée ! Désormais plus rien ne m'arrête !</p>
+            <p>Libérée, délivrée ! Plus de princesse parfaite !</p>
+            <p>Je suis là, comme je l'ai rêvé !</p>
+            <p>Perdue dans l'hiver !</p>
+            <p>Le froid est pour moi le prix de la liberté.</p>
+        </div>
+
+        <script>
+            const triggers = document.querySelectorAll("a")
+            const highlight = document.createElement("span")
+            highlight.classList.add("highlight")
+            document.body.append(highlight)
+
+            function highlightLink() {
+                const linkCoords = this.getBoundingClientRect()
+                const coords = {
+                    width: linkCoords.width,
+                    height: linkCoords.height,
+                    top: linkCoords.top + window.scrollY,
+                    left: linkCoords.left + window.scrollX
+                }
+                highlight.style.width = `${coords.width}px`
+                highlight.style.height = `${coords.height}px`
+                highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`
+            }
+
+            triggers.forEach(link => link.addEventListener("mouseenter", highlightLink))
+        </script>
+    </body>
+</html>
