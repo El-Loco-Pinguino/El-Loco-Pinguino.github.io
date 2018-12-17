@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <title>24 - Sticky Nav</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style>
+            html {
+                box-sizing: border-box;
+                background: #eeeeee;
+                font-family: 'helvetica neue';
+                font-size: 20px;
+                font-weight: 200;
+            }
+
+            body {
+                margin: 0;
+            }
+
+            *, *:before, *:after {
+                box-sizing: inherit;
+            }
+
+            .site-wrap {
+                max-width: 700px;
+                margin: 70px auto;
+                background: white;
+                padding: 40px;
+                text-align: justify;
+                box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
+                transform: scale(0.98);
+                transition: transform 0.5s;
+            }
+
+            header {
+                text-align: center;
+                height: 50vh;
+                background: url(http://static.hitek.fr/img/actualite/w_10-legendes-urbaines-japonaises-terrifiantes3.jpg) bottom center no-repeat;
+                background-size: cover;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            h1 {
+                color: white;
+                font-size: 4vw;
+                text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+            }
+
+            small {
+                color: #e9a;
+                font-size: 4vw;
+                text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+            }
+
+            small a:link, small a:hover, small a:active, small a:visited {
+                color: #b34;
+            }
+
+            h2 {
+                color: #212138;
+                font-size: 3vw;
+                text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+            }
+
+            nav {
+                background: black;
+                top: 0;
+                width: 100%;
+                transition: all 0.5s;
+                position: relative;
+                z-index: 1;
+            }
+
+            .fixed-nav nav {
+                position: fixed;
+                box-shadow: 0 5px rgba(0, 0, 0, 0.2);
+            }
+
+            nav ul {
+                margin: 0;
+                padding:0;
+                list-style: none;
+                display: flex;
+            }
+
+            nav li {
+                flex: 1;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            li.logo {
+                max-width: 0;
+                overflow: hidden;
+                background: white;
+                transition: all .5s;
+                font-weight: 600;
+                font-size: 30px;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            li.logo a {
+                color: black;
+            }
+
+            nav a {
+                text-decoration: none;
+                padding: 20px;
+                display: inline-block;
+                color: white;
+                transition: all 0.2s;
+                text-transform: uppercase;
+            }
+
+            .fixed-nav li.logo {
+                max-width: 360px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Quelques légendes urbaines japonaises</h1>
+            <small>Contenus pris de <a href="https://hitek.fr/actualite/10-legendes-japonaises-terrifiantes_3191">HiTek</a></small>
+        </header>
+
+        <nav id="main">
+            <ul>
+                <li class="logo"><a href="">Kaidan</a></li>
+                <li><a href="#kuchisake">Kuchisake-Onna</a></li>
+                <li><a href="#aokigahara">Aokigahara</a></li>
+                <li><a href="#okiku">Okiku Kingyou</a></li>
+                <li><a href="#hanako">Hanako-San</a></li>
+            </ul>
+        </nav>
+
+        <div class="site-wrap">
+            <h2 id="kuchisake">Kuchisake-Onna, la femme à la bouche fendue</h2>
+            <p>Durant l'ère Heian (794-1185) vivait une très belle femme, épouse d'un samouraï fort jaloux. Mais elle était également peu fidèle. Le samouraï fini par découvrir les multiples tromperies de sa femme. Déshonoré et trahi, il décida de la tuer en lui fendant la bouche des commissures jusqu'aux deux oreilles, tout en lui hurlant "Qui te trouvera belle, désormais ?".</p>
+            <img src="http://static.hitek.fr/img/actualite/10-legendes-urbaines-japonaises-terrifiantes.jpg" alt="" class="align-left slide-in">
+            <p>Aujourd'hui, on raconte que la femme à la bouche fendue apparaît la nuit avec un masque chirurgical pour cacher son "sourire" et une longue paire de ciseaux. Lorsqu'elle rencontre un homme, elle lui pose la question "Suis-je belle ?". Si il répond non, il est tué sur le champ. Si il répond oui, elle retire alors son masque et demande "Même comme cela ?". Répondre non signifie encore une fois la mort. Si l'homme dit oui, elle le suit jusqu'à chez lui avant de le tuer devant le seuil de sa porte. Le seul moyen de lui échapper est de lui dire qu'elle est une femme ordinaire, ni belle ni laide.</p>
+
+            <h2 id="aokigahara">Aokigahara, la forêt des suicides</h2>
+            <img src="http://static.hitek.fr/img/actualite/10-legendes-urbaines-japonaises-terrifiantes1.png" alt="" class="align-right slide-in">
+            <p>Aokigahara est l'immense forêt qui se situe au pied du Mont Fuji. La légende veut que quiconque entre dans cette forêt n'en ressorte jamais. Encore de nos jours, de nombreuses personnes se perdent dans la forêt, et des corps partiellement dévorés sont retrouvés. L'endroit serait habité par des chauves-souris tueuses, les boussoles ne fonctionneraient pas et la lumière du jour peinerait à y entrer. À cause du nombre important de suicides, de nombreux fantômes peupleraient cette forêt et s'en prendrait à ceux qui osent y entrer. Il s'agirait tout simplement de l'endroit le plus hanté du Japon.</p>
+            <iframe width="420" height="315" src="https://www.youtube.com/embed/thrs452A_A8"></iframe>
+
+            <h2 id="okiku">Okiku Kingyou, la poupée aux cheveux qui poussent</h2>
+            <p>Cette poupée appartenait à une petite fille de 3 ans, morte de maladie en 1918. La famille déménagea par la suite et, ne sachant que faire de la poupée, ils demandèrent au monastère Mannenji de s'en occuper car il s'agissait du jouet fétiche de leur petite fille. Plus tard, on fit remarquer à un des moines que les cheveux de la poupée étaient devenus plus longs. Après vérification, ceux-ci avaient en effet poussés ! Le moine décida donc de couper les cheveux de la poupée, mais ceux-ci devinrent encore plus longs. Les cheveux ont alors été analysés et seraient d'origine humaine ! La poupée renfermerait donc l'âme de la petite fille, et elle se mettrait parfois à sourire. Chaque année, une cérémonie a lieu en l'honneur de la fillette et les cheveux de la poupée sont coupés.</p>
+            <img src="http://static.hitek.fr/img/actualite/w_10-legendes-urbaines-japonaises-terrifiantes4.jpg" alt="" class="align-left slide-in">
+
+            <h2 id="hanako">Hanako-San, le fantôme des toilettes</h2>
+            <p>Il s'agit d'une légende très populaire au Japon, avec des origines très diverses. Certains disent qu'il s'agit d'une jeune enfant morte dans un bombardement, alors qu'elle se cachait dans les toilettes lors d'une partie de cache-cache. Pour d'autres, il s'agirait d'une jeune fille harcelée par un pervers qui se cacha dans les toilettes pour finalement être assassinée. Une autre version veut qu'elle se soit simplement suicidée dans les toilettes de son école. Ce fantôme hanterait donc le troisième cabinet des toilettes du troisième étage. Si l'on se place devant le miroir et prononce trois fois son nom, elle apparaît et emporte la malheureuse personne dans les cabinets.</p>
+            <s>C'est pour ça que les cabinets ont tendance à être régulièrement sales.</s>
+            <img src="http://static.hitek.fr/img/actualite/w_10-legendes-urbaines-japonaises-terrifiantes5.jpg" alt="" class="align-right slide-in">
+        </div>
+
+        <script>
+            const nav = document.querySelector("#main")
+            const topOfNav = nav.offsetTop
+
+            function fixNav() {
+                if (window.scrollY >= topOfNav) {
+                    document.body.style.paddingTop = nav.offsetHeight + "px"
+                    document.body.classList.add("fixed-nav")
+                } else {
+                    document.body.style.paddingTop = 0
+                    document.body.classList.remove("fixed-nav")
+                }
+            }
+
+            window.addEventListener("scroll", fixNav)
+        </script>
+    </body>
+</html>

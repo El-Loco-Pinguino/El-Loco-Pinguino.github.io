@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <title>28 - Video Speed Controller</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style>
+            body {
+                margin: 0;
+                min-height: 100vh;
+                background: #272727 url('http://www.pouzauges.com/wp-content/uploads/2017/09/IMG_0100-1024x683.jpg') no-repeat;
+                background-size: cover;
+                font-family: sans-serif;
+            }
+
+            p {
+                width: 100%;
+                display: inline-block;
+            }
+
+            .wrapper {
+                width: 850px;
+                display: flex;
+            }
+
+            video {
+                box-shadow: 0 0 1px 3px rgba(0,0,0,0.1);
+            }
+
+            .speed {
+                background: #e81;
+                flex: 1;
+                display: flex;
+                align-items: flex-start;
+                margin: 10px;
+                border-radius: 50px;
+                box-shadow: 0 0 1px 3px rgba(0,0,0,0.1);
+                overflow: hidden;
+            }
+
+            .speed-bar {
+                width: 100%;
+                background: linear-gradient(-170deg, #fa5 0%, #f20 100%);
+                text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 2px;
+                color: white;
+                height: 16.3%;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Vidéo: record du monde du 400 mètres féminin. Marita Koch (RDA, 1985).</p>
+        <div class="wrapper">
+            <video class="flex" width="765" height="430" src="./assets/400m.mp4" loop controls></video>
+            <div class="speed">
+                <div class="speed-bar">x1</div>
+            </div>
+        </div>
+        <script>
+            const speed = document.querySelector(".speed")
+            const bar = speed.querySelector(".speed-bar")
+            const video = document.querySelector(".flex")
+            speed.addEventListener("mousemove", function(e) {
+                const y = e.pageY - this.offsetTop
+                const percent = y / this.offsetHeight
+                const min = 0.5
+                const max = 3
+                const height = Math.round(percent * 100) + "%"
+                bar.style.height = height
+                const playbackRate = percent * (max - min) + min
+                bar.textContent = `x${playbackRate.toFixed(2)}`
+                video.playbackRate = playbackRate
+            })
+        </script>
+    </body>
+</html>
