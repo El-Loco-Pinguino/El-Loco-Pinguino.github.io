@@ -1,6 +1,6 @@
 body {
     font-size: 10px;
-    background: url("https://i.imgur.com/rFU94E8.jpg") bottom center;
+    background: url("./../assets/auditorium.png") bottom center;
     background-size: cover;
   }
   
@@ -33,7 +33,7 @@ body {
   }
   
   .playing {
-    transform: scaleY(1.1);
+    transform: scaleY(1.1) rotateZ(2deg);
     border-color: #f2f;
     box-shadow: 0 0 1em #f2f;
   }
@@ -44,7 +44,7 @@ body {
   }
   
   .sound {
-    font-size: 1.2em;
+    font-size: 1em;
     text-transform: uppercase;
     letter-spacing: .1em;
     color: #111;

@@ -54,3 +54,11 @@ html {
     transition: all 0.1s;
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
   }
+
+  .hour-hand {
+    transform: scale(0.7);
+  }
+
+  .sec-hand {
+    transform: scaleX(0.5);
+  }

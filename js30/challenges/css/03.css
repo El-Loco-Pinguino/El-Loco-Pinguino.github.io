@@ -1,7 +1,7 @@
 :root {
-    --base: #1e2;
-    --spacing: 10px;
-    --blur: 10px;
+    --base: #fff;
+    --spacing: 0;
+    --blur: 0;
     --scaleX: 1;
 }
 
