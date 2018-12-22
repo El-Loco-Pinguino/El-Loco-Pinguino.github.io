@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
-    <body>
+    <body style="padding: 1em;">
         <div>
             <h1>Addition de temps</h1>
             <h2>Au sujet de la série MP3 Reflets d'Acide</h2>
@@ -28,11 +28,10 @@
                 <li data-time="89:06">Partie 15 : Bien plus que des racines, mieux vaut avoir des ailes... afin de s'élever</li>
                 <li data-time="112:54">Partie 16 : Au delà de la Mort, de l’Enfer et du Temps, Il n’est de pire sort que celui du Néant</li>
             </ul>
+            <iframe width="420" height="315" src="https://www.youtube.com/embed/T7wB7TQHylM"></iframe>
+            <p>Durée totale: <span id="time"></span></p>
+            <small>C'est pas tout à fait la bonne durée par contre (9:14:50)</small>
         </div>
-
-        <iframe width="420" height="315" src="https://www.youtube.com/embed/T7wB7TQHylM"></iframe>
-        <p>Durée totale: <span id="time"></span></p>
-        <small>C'est pas tout à fait la bonne durée par contre (9:14:50)</small>
 
         <script>
             const timeNodes = [...document.querySelectorAll("[data-time]")]

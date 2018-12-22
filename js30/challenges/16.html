@@ -12,7 +12,7 @@
           
             body {
               margin: 0;
-              background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Grey_square_optical_illusion.svg/2000px-Grey_square_optical_illusion.svg.png") no-repeat;
+              background: url("./assets/illusion.png") no-repeat;
               background-size: cover;
             }
           
@@ -33,7 +33,7 @@
     </head>
     <body>
         <div class="hero">
-            <h1 contenteditable>Contre-jour</h1>
+            <h1>Illusion</h1>
         </div>
 
         <script>
@@ -54,10 +54,14 @@
                 const yWalk = Math.round((y / height * walk) - (walk / 2))
 
                 text.style.textShadow = `
-                ${xWalk}px ${yWalk}px rgba(0, 0, 0, 0.4),
-                ${-xWalk}px ${yWalk}px rgba(128, 0, 0, 0.4),
-                ${xWalk/2}px ${-yWalk}px rgba(0, 128, 0, 0.4),
-                ${-xWalk/2}px ${-yWalk}px rgba(0, 0, 128, 0.4)
+                ${xWalk * 2}px ${yWalk / 3}px rgba(0, 0, 0, 0.4),
+                ${-xWalk}px ${yWalk / 2}px rgba(128, 0, 0, 0.4),
+                ${xWalk / 2}px ${-yWalk}px rgba(0, 128, 0, 0.4),
+                ${-xWalk / 3}px ${-yWalk * 2}px rgba(0, 0, 128, 0.4),
+                ${-xWalk * 2}px ${-yWalk / 3}px rgba(192, 96, 0, 0.4),
+                ${xWalk}px ${-yWalk / 2}px rgba(0, 192, 96, 0.4),
+                ${-xWalk / 2}px ${yWalk}px rgba(96, 0, 192, 0.4),
+                ${xWalk / 3}px ${yWalk * 2}px rgba(192, 192, 192, 0.4)
                 `
             }
 

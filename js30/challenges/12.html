@@ -8,6 +8,7 @@
         <style>
             body {
                 margin: 0;
+                padding: 1em;
             }
 
             body.done {
@@ -19,6 +20,7 @@
     <body>
         <h1>Pour envoyer la Team Rocket vers d'autres cieux, tapez <em>pikachu</em> !</h1>
         <audio src="./assets/unefoisdeplus.mp3" id="jingle"></audio>
+        <audio src="./assets/Explosion7.ogg" id="boom"></audio>
         <script>
             const pressed = []
             const secretCode = "pikachu"
@@ -31,6 +33,7 @@
                     activated = true
                     document.getElementsByTagName("body")[0].classList.add("done")
                     document.getElementsByTagName("h1")[0].innerText = "Une fois de plus la Team Rocket s'envole vers d'autres cieux !"
+                    document.getElementById("boom").play()
                     document.getElementById("jingle").play()
                 }
             })

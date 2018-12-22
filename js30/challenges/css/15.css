@@ -1,6 +1,6 @@
 html {
     box-sizing: border-box;
-    background: url(http://www.hellopal.com/wp-content/uploads/2016/09/o-WRITING-A-LIST-facebook.jpg) center no-repeat;
+    background: url("./../assets/liste.jpg") center no-repeat;
     background-size: cover;
     min-height: 100vh;
     display: flex;
