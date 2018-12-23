@@ -6,6 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <style>
+            @font-face {
+                font-family: "DS-Digital";
+                src: url("./assets/ds_digital/DS-DIGI.TTF");
+            }
             html {
                 box-sizing: border-box;
                 font-size: 10px;
@@ -24,6 +28,7 @@
             }
 
             .display__time-left {
+                font-family: "DS-Digital";
                 font-weight: 100;
                 font-size: 20rem;
                 margin: 0;
@@ -52,6 +57,7 @@
 
             .timer__controls input {
                 flex: 1;
+                font-size: 1.5em;
                 border: 0;
                 padding: 2rem;
             }
@@ -146,7 +152,7 @@
             }
 
             buttons.forEach(button => button.addEventListener("click", startTimer))
-            document.custom.minutes.addEventListener("submit", function(e) {
+            document.customForm.addEventListener("submit", function(e) {
                 e.preventDefault()
                 const mins = this.minutes.value
                 timer(mins * 60)

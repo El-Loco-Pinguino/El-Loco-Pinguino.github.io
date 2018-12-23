@@ -17,6 +17,9 @@
             p {
                 width: 100%;
                 display: inline-block;
+                color: #ffffff;
+                background: #a06040;
+                padding: 0 1em;
             }
 
             .wrapper {
@@ -41,7 +44,7 @@
 
             .speed-bar {
                 width: 100%;
-                background: linear-gradient(-170deg, #fa5 0%, #f20 100%);
+                background: linear-gradient(-170deg, #a5f 0%, #20f 100%);
                 text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
                 display: flex;
                 align-items: center;
@@ -69,7 +72,7 @@
                 const percent = y / this.offsetHeight
                 const min = 0.5
                 const max = 3
-                const height = Math.round(percent * 100) + "%"
+                const height = Math.round(10 + percent * 90) + "%"
                 bar.style.height = height
                 const playbackRate = percent * (max - min) + min
                 bar.textContent = `x${playbackRate.toFixed(2)}`

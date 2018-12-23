@@ -16,7 +16,6 @@
             }
 
             body {
-                margin: 0;
                 min-height: 100vh;
             }
 
@@ -59,12 +58,13 @@
                 border-radius: 2px;
                 transition: all 0.5s;
                 transform: translateY(100px);
-                will-change: opacity;
+                will-change: transform;
                 display: none;
             }
 
             .trigger-enter .dropdown {
                 display: block;
+                opacity: 1;
             }
 
             .trigger-enter-active .dropdown {
@@ -101,7 +101,6 @@
             .bio {
                 min-width: 500px;
                 display: flex;
-                flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 line-height: 1.7;
@@ -144,17 +143,16 @@
 
             <ul class="cool">
                 <li>
-                    <a href="">À propos de moi</a>
+                    <a href="#">À propos de moi</a>
                     <div class="dropdown dropdown1">
                         <div class="bio">
                             <img src="https://www.gravatar.com/avatar/59c245da321332401bd2a1ffbc6767d7">
-                            <p>Non ce n'est pas mon apparence IRL. <small>Enfin, j'aurais voulu avoir ce look un peu bad boy.</small></p>
-                            <p>Sérieusement. Je m'appelle <strong>Florian HOURLIER</strong>, je suis un développeur français qui tente de concilier praticité et fun.</p>
+                            <p>Non ce n'est pas mon apparence IRL. <small>Enfin, j'aurais voulu avoir ce look un peu bad boy.</small> Sérieusement. Je m'appelle <strong>Florian HOURLIER</strong>, je suis un développeur français qui tente de concilier praticité et fun.</p>
                         </div>
                     </div>
                 </li>
                 <li>
-                    <a href="">Réalisations</a>
+                    <a href="#">Réalisations</a>
                     <ul class="dropdown courses">
                         <li>
                             <span class="code">EB</span>
@@ -171,7 +169,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="">Autres liens</a>
+                    <a href="#">Autres liens</a>
                     <ul class="dropdown dropdown3">
                         <li><a class="button" href="https://twitter.com/FlorianHourlier">Twitter</a></li>
                         <li><a class="button" href="https://www.linkedin.com/in/florian-hourlier-3477b715a">Linkedin</a></li>
@@ -185,9 +183,9 @@
             const nav = document.querySelector(".top")
 
             function handleEnter() {
-                this.classList.add('trigger-enter')
-                setTimeout(() => this.classList.contains('trigger-enter') && this.classList.add('trigger-enter-active'), 150)
-                background.classList.add('open')
+                this.classList.add("trigger-enter")
+                setTimeout(() => this.classList.contains("trigger-enter") && this.classList.add("trigger-enter-active"), 150)
+                background.classList.add("open")
                 const dropdown = this.querySelector(".dropdown")
                 const dropdownCoords = dropdown.getBoundingClientRect()
                 const navCoords = nav.getBoundingClientRect()
@@ -205,12 +203,13 @@
             }
 
             function handleLeave() {
-                this.classList.remove("trigger-enter", "trigger-enter-active")
-                background.classList.remove('open');
+                this.classList.remove("trigger-enter")
+                setTimeout(() => this.classList.remove("trigger-enter-active"), 150)
+                background.classList.remove("open")
             }
 
             triggers.forEach(trigger => trigger.addEventListener("mouseenter", handleEnter))
-            triggers.forEach(trigger => trigger.addEventListener("mouseout", handleLeave))
+            triggers.forEach(trigger => trigger.addEventListener("mouseleave", handleLeave))
         </script>
     </body>
 </html>
