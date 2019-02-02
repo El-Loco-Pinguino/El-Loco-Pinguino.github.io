@@ -9,8 +9,19 @@
         }
 
         .msg {
+            display: inline-block;
             line-height: 1em;
-            margin-bottom: 1em;
+            margin: 1em;
+            border: 1px solid black;
+            padding: 0.25em;
+            width: 200px;
+            height: 200px;
+            overflow: auto;
+        }
+
+        #blocMessage {
+            display: flex;
+            flex-wrap: wrap;
         }
     </style>
 </head>
@@ -93,7 +104,8 @@
             "Super Nanny",
             "la caissière",
             "l'archiduc des Concombres",
-            "mon tuteur" // NEW
+            "mon tuteur",
+            "le Père Fouras" // NEW
         ]
 
         const verbe = [
@@ -165,7 +177,8 @@
             "s'est gratté les épaules",
             "a bu un coup",
             "a piqué une crise", 
-            "a agressé des gens" // NEW
+            "a agressé des gens",
+            "a osé se moquer de moi" // NEW
         ]
 
         const ou = [
@@ -237,7 +250,8 @@
             "le MacDo près d'ici",
             "le temple d'Hyrule",
             "les locaux d'Innovact",
-            "la décharge" // NEW
+            "la décharge",
+            "le gymnase" // NEW
         ]
 
         const quoiOne = [
@@ -309,7 +323,8 @@
             "d'une étonnante",
             "d'une pétrifiée",
             "de la vilaine",
-            "qui sait" // NEW
+            "qui sait, d'une",
+            "de la méprisante" // NEW
         ]
 
         const quoiTwo = [
@@ -381,7 +396,8 @@
             "purée d'épinards",
             "calculette Casio",
             "soupe minestrone", 
-            "aquarelle de Marie Laurencin" // NEW
+            "aquarelle de Marie Laurencin",
+            "housse de couette" // NEW
         ]
 
         const quoiThree = [
@@ -453,7 +469,8 @@
             "jouait au poker",
             "rouspétait méchamment",
             "avait vendu son âme au diable", 
-            "qui avait fini en prison" // NEW
+            "qui avait fini en prison",
+            "qui criait au loup" // NEW
         ]
 
         const commentaire = [
@@ -468,9 +485,10 @@
             "Que de foutaises.",
             "Non mais allô quoi !",
             "Pas sage tu as été.",
-            "Je ne vais pas y aller de mainmorte.", // NEW
-            "Quoi ?! Tout ça pour ça ?!", // NEW
-            "Tu me fatigues.", // NEW
+            "Je ne vais pas y aller de mainmorte.",
+            "Quoi ?! Tout ça pour ça ?!",
+            "Tu me fatigues.",
+            "Je ne vais pas faire dans la dentelle." // NEW
         ]
 
         const sanction = [
@@ -487,7 +505,8 @@
             "tu rempliras ma déclaration d'impôts",
             "je vais te faire une brûlure indienne",
             "je vais jeter ta collection de figurines Astérix",
-            "tu feras des heures supplémentaires", // NEW
+            "tu feras des heures supplémentaires",
+            "je vais préparer la guillotine" // NEW
         ]
         
         let nombrePhrase = 0
