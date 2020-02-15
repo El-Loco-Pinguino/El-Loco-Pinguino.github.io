@@ -34,53 +34,72 @@
 <body>
     <h1>Voici tout ce que j'ai pu bidouiller</h1>
     <p>Les boutons vous permettent d'accéder à ces expériences dans un nouvel onglet. Elles sont classées par pertinence.</p>
-    <div class="container bg-light">
+    <div class="container bg-light flex">
         <div class="row" id="panel">
-            
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <img class="card-img-top" src="./home/blog.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Blog de la journée d'intégration</h4>
+                        <p class="card-text"><a href="./blog/index.html" target="_blank"><button class='btn btn-primary'>Accéder</button></a><br/>Le premier des 3 projets de la Wild Code School: un site mono-page en HTML et CSS traditionnel</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <img class="card-img-top" src="./home/gollum1.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Find The Precious v1</h4>
+                        <p class="card-text"><a href="./precious_v1/index.html" target="_blank"><button class='btn btn-primary'>Accéder</button></a><br/>Un rendu assez perfectible selon moi</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <img class="card-img-top" src="./home/gollum2.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Find The Precious v2</h4>
+                        <p class="card-text"><a href="./precious_v2/index.html" target="_blank"><button class='btn btn-primary'>Accéder</button></a><br/>Un résultat bien plus professionnel !</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <img class="card-img-top" src="./home/ds.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Hackathon - Jeu rétro</h4>
+                        <p class="card-text"><a href="./hackathon/index.html" target="_blank"><button class='btn btn-primary'>Accéder</button></a><br/>Événement organisé avec 2 autres camarades de formation lors du week-end du 20/10/2018</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <img class="card-img-top" src="./home/js30.png">
+                    <div class="card-body">
+                        <h4 class="card-title">JavaScript30</h4>
+                        <p class="card-text"><a href="./js30/index.html" target="_blank"><button class='btn btn-primary'>Accéder</button></a><br/>J'ai participé au challenge JavaScript30, qui consiste à réaliser 30 challenges en JavaScript natif.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <img class="card-img-top" src="./home/desole.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Excuses bidon (FR)</h4>
+                        <p class="card-text"><a href="./fun/excusesBidon.html" target="_blank"><button class='btn btn-primary'>Accéder</button></a><br/>Je suis désolé sensei, c'est parce que...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <img class="card-img-top" src="./home/desole.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Excuses bidon imagées</h4>
+                        <p class="card-text"><a href="./fun/excusesImagées.html" target="_blank"><button class='btn btn-primary'>Accéder</button></a><br/>Une image vaut 1000 mots !</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <script>
-        const drawCard = (title, lien, description, image, dateMaj) => {
-            document.getElementById("panel").innerHTML += `
-            <div class="col-12 col-sm-6 col-lg-4">
-            <div class="card">
-            <img class="card-img-top" src="${image}">
-            <div class="card-body">
-            <h4 class="card-title">${title}</h4>
-            <p class="card-text"><a href="${lien}" target="_blank"><button class='btn btn-primary'>Accéder</button></a><br/>${description}</p>
-            </div>
-            </div>
-            </div>`
-        }
-
-        drawCard("Mon CV de développeur", "./cv/cvweb.html", "Faisons connaissance !", "./home/cv.png")
-        drawCard("Blog de la journée d'intégration", "./blog/index.html", "Le premier des 3 projets de la Wild Code School: un site mono-page en HTML et CSS traditionnel", "./home/blog.png")
-        drawCard("Find The Precious v1", "./precious_v1/index.html", "Un rendu assez perfectible selon moi", "./home/gollum1.png")
-        drawCard("Find The Precious v2", "./precious_v2/index.html", "Un résultat bien plus professionnel !", "./home/gollum2.png")
-        drawCard("Hackathon - Jeu rétro", "./hackathon/index.html", "Événement organisé avec 2 autres camarades de formation lors du week-end du 20/10/2018", "./home/ds.png")
-        drawCard("JavaScript30", "./js30/index.html", "J'ai participé au challenge JavaScript30, qui consiste à réaliser 30 challenges en JavaScript natif.", "./home/js30.png")
-        drawCard("Excuses bidon (FR)", "./fun/excusesBidon.html", "Je suis désolé sensei, c'est parce que…", "./home/desole.png")
-        drawCard("Excuses bidon (EN)", "./fun/fakeExcuses.html", "Boss, I'm so sorry, but…", "./home/desole.png")
-        drawCard("Excuses bidon (ES)", "./fun/falsasDisculpas.html", "Perdón señor, pero…", "./home/desole.png")
-        drawCard("Cadavre exquis (3 joueurs)", "./fun/cadavre.html", "Un cadavre exquis jouable à 3 joueurs. Saisissez votre nom et suivez les instructions !", "./home/cadavreexquis.png")
-        drawCard("Partie de dés", "./fun/de.html", "La chance vous sourira-t-elle ?", "./home/de.png")
-        drawCard("Supra-Débogueur", "./utile/supraDebug.html", "Un outil personnalisé de débogage, qui passe en revue les variables souhaitées", "./home/debug.png")
-        drawCard("Inputs attentifs", "./utile/inputsDynamiques.html", "Des actions sont prévues quand vous touchez à ces zones de saisie", "./home/input.png")
-        drawCard("Inputs en série", "./utile/serieInputs.html", "Quand vous saisissez un contenu dans l'un, un autre se rajoute après", "./home/input.png")
-        drawCard("RPG minimaliste", "./fun/fight.html", "Qui de Super-Patate ou d'Evil Cassoulet remportera le combat ?", "./home/bouclier.png")
-        drawCard("Générateur de carte Bootstrap", "./utile/generateurCard.html", "Un outil de création simple et pratique", "./home/bootstrap.png")
-        drawCard("Traducteur simpliste", "./fun/traduction.html", "Juste les formules de politesse et 6 langues", "./home/salut.png")
-        drawCard("Pixel-art Bootstrap I", "./fun/pixel.html", "Détourner les outils pour faire un cœur de 10 cases sur 10", "./home/coeur.png")
-        drawCard("Pixel-art Bootstrap II", "./fun/pixelsa.html", "Un dessin plus ambitieux d'Elsa de la Reine des Neiges.", "./home/elsa.png")
-        drawCard("Pommes qui roulent", "./fun/pomme.html", "Pomme qui roule en CSS n'amasse pas mousse !", "./home/pommedanse.gif")
-        drawCard("Overdose de poireaux", "./fun/leek.html", "Une animation CSS avec un peu plus que 5 légumes par jour ! Attention, expérience bizarre.", "./home/poireau.png")
-        drawCard("Brouilleur hexadécimal", "./fun/brouilleur.html", "Une expérience montrant ma maîtrise des expressions régulières", "./home/brouilleur.png")
-        drawCard("Moto qui roule", "./fun/moto.html", "Un déplacement par à-coups, mais un déplacement quand même !", "./home/ghostrider.png")
-        drawCard("Pistolet", "./fun/pan.html", "Appuyez sur le bouton, une balle part au loin !", "./home/pistolet.png")
-        drawCard("Variante de démineur", "./fun/ButtonMania.html", "Un démineur, mais sans les chiffres, et aléatoire !", "./home/mine.png")
-        drawCard("Nuée de champignons", "./fun/champignons.html", "Pourquoi n'avoir qu'un seul 1-up quand on peut en avoir 10 ?", "./home/oneup.png")
-        drawCard("Cadran", "./fun/cadran.html", "Ce qu'on peut appeler un véritable passe-temps", "./home/horloge.png")
-    </script>
 </body>
 </html>

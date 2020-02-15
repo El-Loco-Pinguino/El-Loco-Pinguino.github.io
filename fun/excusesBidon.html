@@ -35,26 +35,33 @@
 
     </div>
     <script>
+        const sorry = [
+            "Je suis désolé sensei",
+            "Monsieur le Président",
+            "Yamete kudasai",
+            "Veuillez m'excuser pour mon retard"
+        ]
+
         const qui = [
             "un zombie",
-            "le troll érudit",
-            "l'un des gardiens",
-            "un rat mutant",
-            "l'aubergiste",
-            "le bourreau ivre",
-            "un ménestrel moche",
-            "le gobelin de ménage",
-            "un orc d'élite",
-            "le sorcier stagiaire",
-            "un type suspect",
+            "ma nièce",
+            "Tony Parker",
+            "Babar",
+            "la cantinière",
+            "Copernic",
+            "Richelieu",
+            "Madame Soleil",
+            "Catherine Deneuve",
+            "Madame de Maintenon",
+            "un grizzly",
             "le prisonnier barbu",
-            "l'herboriste",
+            "Tatie Danielle",
             "le chien d'un voisin",
-            "un garde de la ville",
-            "un colporteur",
+            "un gendarme",
+            "Youri Gagarine",
             "un aventurier",
             "le plombier",
-            "l'ingénieur gobelin",
+            "Garry Kasparov",
             "un vieux fou",
             "un certain Thomas C",
             "le campus manager",
@@ -106,11 +113,36 @@
             "l'archiduc des Concombres",
             "mon tuteur",
             "le Père Fouras",
-            "Cristiano Ronaldo", // NEW
-            "Neymar", // NEW
-            "Jon Snow", // NEW
-            "mon exorciste", // NEW
-            "le développeur web" // NEW
+            "Cristiano Ronaldo",
+            "Neymar",
+            "Jon Snow",
+            "mon exorciste",
+            "le développeur web",
+            "Quasimodo", // NEW
+            "Mickey Mouse", // NEW
+            "la gitane", // NEW
+            "la Princesse de Clèves", // NEW
+            "le taxidermiste", // NEW
+            "Batman", // NEW
+            "Pac-Man", // NEW
+            "Nicky Larson", // NEW
+            "le Capitaine Haddock", // NEW
+            "le consul du Danemark", // NEW
+            "le comptable", // NEW
+            "Scooby-Doo", // NEW
+            "Audrey Hepburn", // NEW
+            "Édith Piaf", // NEW
+            "Guy de Maupassant", // NEW
+            "Grumpy Cat", // NEW
+            "Marie-Antoinette", // NEW
+            "ma belle-sœur", // NEW
+            "l'éboueur", // NEW
+            "mon moniteur d'auto-école", // NEW
+            "Stéphane Bern", // NEW
+            "le Capitaine Crochet", // NEW
+            "Madame Bovary", // NEW
+            "Julien Clerc", // NEW
+            "le notaire" // NEW
         ]
 
         const verbe = [
@@ -184,32 +216,57 @@
             "a piqué une crise", 
             "a agressé des gens",
             "a osé se moquer de moi",
-            "a frôlé la mort", // NEW
-            "a insulté tout le monde", // NEW
-            "m'a donné une fessée", // NEW
-            "a bichonné son chat", // NEW
-            "a descendu les poubelles" // NEW
+            "a frôlé la mort",
+            "a insulté tout le monde",
+            "m'a donné une fessée",
+            "a bichonné son chat",
+            "a descendu les poubelles",
+            "m'a caressé", // NEW
+            "a imité le canard", // NEW
+            "a fait une prière", // NEW
+            "a loué une maison", // NEW
+            "a manigancé quelque chose", // NEW
+            "a donné des leçons", // NEW
+            "a joué du piano", // NEW
+            "a joué de l'accordéon", // NEW
+            "vous a demandé des nouvelles", // NEW
+            "a eu des problèmes avec son PC", // NEW
+            "a fait des tours de piste", // NEW
+            "a récité des vers", // NEW
+            "m'a interviewé", // NEW
+            "a eu honte de moi", // NEW
+            "a promené son chien", // NEW
+            "a fait une pédicure", // NEW
+            "a organisé des obsèques", // NEW
+            "a envoyé des mails injurieux", // NEW
+            "a été vilain avec moi", // NEW
+            "sentait vraiment mauvais", // NEW
+            "s'était recoiffé", // NEW
+            "a eu une crampe", // NEW
+            "a bricolé", // NEW
+            "a longuement réfléchi", // NEW
+            "m'a reniflé" // NEW
         ]
 
         const ou = [
-            "la cave",
-            "le souterrain nord",
+            "votre cave",
+            "son camping-car",
             "le grenier",
             "mon bureau",
-            "la remise à ingrédients",
-            "les cuisines",
-            "la niche des chiens",
-            "la volière à corbeaux",
-            "la fosse à scorpions",
+            "Auschwitz",
+            "ma cuisine",
+            "la niche du chien",
+            "une navette spatiale",
+            "Strasbourg",
             "votre bureau",
-            "l'escalier du deuxième niveau",
-            "le bac du limon glaireux",
+            "l'auto-école",
+            "le bac à sable",
             "le couloir principal",
             "le hangar de bricolage",
             "l'atelier de forge",
-            "la salle de fouettage",
-            "le dortoir des orcs",
-            "l'antre du Golbargh",
+            "la salle de bal",
+            "le dortoir du lycée",
+            "le gouffre de Padirac",
             "le magasin",
             "votre bibliothèque",
             "la Wild Code School",
@@ -262,11 +319,36 @@
             "les locaux d'Innovact",
             "la décharge",
             "le gymnase",
-            "le bois de Vincennes", // NEW
-            "le Cora près de chez moi", // NEW
-            "la maison de Mickey", // NEW
-            "l'ascenseur", // NEW
-            "Springfield" // NEW
+            "le bois de Vincennes",
+            "le Cora près de chez moi",
+            "la maison de Mickey",
+            "l'ascenseur",
+            "Springfield",
+            "le Café Pouchkine", // NEW
+            "l'Orient-Express", // NEW
+            "la maison de Mamie", // NEW
+            "un tonneau", // NEW
+            "la Place Rouge", // NEW
+            "un autobus à impériale", // NEW
+            "l'escalier", // NEW
+            "Poudlard", // NEW
+            "une calèche", // NEW
+            "un studio d'enregistrement", // NEW
+            "un manoir hanté", // NEW
+            "la mare aux canards", // NEW
+            "le temple d'Angkor Vat", // NEW
+            "le commissariat", // NEW
+            "un passage secret", // NEW
+            "une maison close", // NEW
+            "un hôtel Rue de la Paix", // NEW
+            "une banque", // NEW
+            "la cantine", // NEW
+            "l'Ile aux enfants", // NEW
+            "cette caravane", // NEW
+            "la maison vide", // NEW
+            "le cimetière", // NEW
+            "une brèche interdimensionnelle", // NEW
+            "une boite à œufs" // NEW
         ]
 
         const quoiOne = [
@@ -543,6 +625,7 @@
         
         let nombrePhrase = 0
         const limite = 500
+        const numberSorry = sorry.length
         const numberQui = qui.length
         const numberVerbe = verbe.length
         const numberOu = ou.length
@@ -551,10 +634,10 @@
         const numberQuoiThree = quoiThree.length
         const numberCommentaire = commentaire.length
         const numberSanction = sanction.length
-        const nombreElements = numberQui * numberVerbe * numberOu * numberQuoiOne * numberQuoiTwo * numberQuoiThree * numberCommentaire * numberSanction
+        const nombreElements = numberSorry * numberQui * numberVerbe * numberOu * numberQuoiOne * numberQuoiTwo * numberQuoiThree * numberCommentaire * numberSanction
 
         document.getElementById("blocMessage").insertAdjacentHTML("afterend", `<p>${nombreElements.toLocaleString()} combinaisons actuellement !</p>`)
-        document.getElementById("blocMessage").insertAdjacentHTML("afterend", `<p>${numberQui} personnes, ${numberVerbe} verbes, ${numberOu} lieux, ${numberQuoiOne} adjectifs, ${numberQuoiTwo} objets, ${numberQuoiThree} raisons, ${numberCommentaire} commentaires et ${numberSanction} sanctions.</p>`)
+        document.getElementById("blocMessage").insertAdjacentHTML("afterend", `<p>${numberSorry} introductions, ${numberQui} personnes, ${numberVerbe} verbes, ${numberOu} lieux, ${numberQuoiOne} adjectifs, ${numberQuoiTwo} objets, ${numberQuoiThree} raisons, ${numberCommentaire} commentaires et ${numberSanction} sanctions.</p>`)
 
         const phrase = (iterations) => {
             if (nombrePhrase + iterations > limite) {
@@ -563,6 +646,7 @@
                 nombrePhrase += iterations
                 for (let a = 0; a < iterations; a++) {
                     // Choix d'élément dans chacun
+                    let sorryChoisi = Math.trunc(Math.random() * numberSorry)
                     let quiChoisi = Math.trunc(Math.random() * numberQui)
                     let verbeChoisi = Math.trunc(Math.random() * numberVerbe)
                     let ouChoisi = Math.trunc(Math.random() * numberOu)
@@ -573,12 +657,12 @@
                     let sanctionChoisi = Math.trunc(Math.random() * numberSanction)
     
                     document.getElementById("blocMessage").insertAdjacentHTML("afterend",
-                    `<div class="msg"><p>- Je suis désolé sensei, c'est parce que 
+                    `<div class="msg"><p>${sorry[sorryChoisi]}, 
                     <span class="evidence">${qui[quiChoisi]} ${verbe[verbeChoisi]}</span> 
                     dans <span class="evidence">${ou[ouChoisi]}</span> 
                     à cause <span class="evidence">${quoiOne[quoiOneChoisi]} ${quoiTwo[quoiTwoChoisi]}</span> 
-                    qui <span class="evidence">${quoiThree[quoiThreeChoisi]}</span>...<br/>
-                    - <span class="evidence">${commentaire[commentaireChoisi]}</span> Pour la peine, <span class="evidence">${sanction[sanctionChoisi]}</span>.</p></div>`)
+                    qui <span class="evidence">${quoiThree[quoiThreeChoisi]}</span>...<hr/>
+                    <span class="evidence">${commentaire[commentaireChoisi]}</span> Pour la peine, <span class="evidence">${sanction[sanctionChoisi]}</span>.</p></div>`)
                 }
             }
         }        

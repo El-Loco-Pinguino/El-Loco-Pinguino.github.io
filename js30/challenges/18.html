@@ -30,6 +30,19 @@
                 <li data-time="41:29">Partie 16 : Parce que Fabrice est bouée !</li>
                 <li data-time="3:59">Partie 17 : Beibeille dans la place !</li>
                 <li data-time="7:57">Partie 18 : Pokédex humain</li>
+                <li data-time="31:57">Partie 19 : C'est un Célébi !</li>
+                <li data-time="21:35">Partie 20 : Overdose de légendaires</li>
+                <li data-time="25:15">Partie 21 : Bibendum le surpuissant</li>
+                <li data-time="26:54">Partie 22 : Tendance des capacités de piège</li>
+                <li data-time="7:44">Partie 23 : Zombies dérisoires</li>
+                <li data-time="6:05">Partie 24 : Le trailer du let's play</li>
+                <li data-time="38:23">Partie 25 : Pyramides cyclopes</li>
+                <li data-time="35:01">Partie 26 : Naviguer sur un camion</li>
+                <li data-time="35:55">Partie 27 : Encore un légendaire raté !</li>
+                <li data-time="38:34">Partie 28 : La glacière du chaos</li>
+                <li data-time="50:26">Partie 29 : Ils sont trop forts !</li>
+                <li data-time="32:36">Partie 30 : Pokémon x Lego...</li>
+                <li data-time="12:47">Partie 31 : Le OH-Chaos de M. Hibou</li>
             </ul>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLf0QnAXbGvcpaEB0hqrAWdiCG0M_YYKZ9" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <p>Durée totale: <span id="time"></span></p>
@@ -48,8 +61,8 @@
             let secondsLeft = seconds
             const hours = Math.floor(secondsLeft / 3600)
             secondsLeft = secondsLeft % 3600
-            const mins = secondsLeft % 60
-            secondsLeft = secondsLeft % 60
+            const mins = secondsLeft % 60 < 10 ? "0" + secondsLeft % 60 : secondsLeft % 60
+            secondsLeft = secondsLeft % 60 < 10 ? "0" + secondsLeft % 60 : secondsLeft % 60
             document.getElementById("time").innerHTML = `${hours}:${mins}:${secondsLeft}`
         </script>
     </body>

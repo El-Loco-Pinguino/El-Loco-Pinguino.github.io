@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Excuses bidon imagées !</title>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+            margin: 1em;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="phrase(1)" type="button">Générer 1 série d'images</button>
+    
+    <div id="blocMessage">
+
+    </div>
+    <script>
+        const sorry = [
+            "Je suis désolé sensei",
+            "Monsieur le Président",
+            "Yamete kudasai",
+            "Veuillez m'excuser pour mon retard"
+        ]
+
+        const qui = [
+            ["un zombie", "zombie.jpg"],
+            ["Babar", "babar.jpeg"],
+            ["un grizzly", "grizzly.jpg"],
+            ["la Reine des Neiges", "elsa.jpg"],
+            ["Shrek", "shrek.jpg"],
+            ["Princesse Peach", "peach.jpg"],
+            ["Pikachu", "pikachu.png"],
+            ["le Grand Schtroumpf", "schtroumpf.png"],
+            ["Céline Dion", "céline.jpg"],
+            ["Scooby-Doo", "scoobydoo.jpg"]
+        ]
+
+        const verbe = [
+            ["avait vomi", "vomi.png"],
+            ["avait dansé la macarena", "macarena.gif"],
+            ["m'avait embrassé", "smack.jpg"],
+            ["m'avait demandé en mariage", "mariage.jpg"],
+            ["n'avait pas arrêté de pleurer", "pleure.gif"],
+            ["avait insulté tout le monde", "insulte.png"],
+            ["m'avait donné une fessée", "fessée.gif"],
+            ["avait imité le canard", "canard.jpg"],
+            ["avait joué du piano", "piano.gif"],
+            ["avait eu des problèmes avec son PC", "bsod.jpg"]
+        ]
+
+        const ou = [
+            ["une navette spatiale", "navette.jpg"],
+            ["le gouffre de Padirac", "gouffre.jpg"],
+            ["Fort Boyard", "boyard.jpg"],
+            ["le pays des Bisounours", "bisounours.jpg"],
+            ["le désert", "sahara.jpg"],
+            ["la maison des sept nains", "septnains.jpg"],
+            ["un conduit d'aération", "aération.jpg"],
+            ["le temple d'Hyrule", "hyrule.png"],
+            ["un tonneau", "tonneau.jpg"],
+            ["une calèche", "calèche.jpg"]
+        ]
+
+        const quoiTwo = [
+            ["corbeille de linge", "corbeille.jpg"],
+            ["peau de banane", "banane.jpg"],
+            ["boîte à meuh", "meuh.jpg"],
+            ["chaise à bascule", "chaise.jpg"],
+            ["oreille en plastique", "oreille.jpg"],
+            ["chemise à fleurs", "chemise.jpg"],
+            ["flaque d'eau", "flaque.png"],
+            ["calculette Casio", "casio.jpg"],
+            ["paire de skis", "skis.jpg"],
+            ["valise à roulettes", "valise.jpg"]
+        ]
+
+        const quoiThree = [
+            ["m'était suspecte", "pense.png"],
+            ["était pourtant chère", "dollar.gif"],
+            ["avait une odeur inquiétante", "pue.jpg"],
+            ["parlait allemand sans aucune raison", "berliner.jpg"],
+            ["me racontait des salades", "salade.jpg"],
+            ["m'avait menacé avec un scalpel", "scalpel.jpg"],
+            ["criait au loup", "loup.jpg"],
+            ["s'était fait pipi dessus", "pipi.png"],
+            ["se brossait les dents", "brossage.gif"],
+            ["se curait le nez", "décrottage.gif"]
+        ]
+        
+        let nombrePhrase = 0
+        const limite = 20
+        const numberSorry = sorry.length
+        const numberQui = qui.length
+        const numberVerbe = verbe.length
+        const numberOu = ou.length
+        const numberQuoiTwo = quoiTwo.length
+        const numberQuoiThree = quoiThree.length
+        const nombreElements = numberSorry * numberQui * numberVerbe * numberOu * numberQuoiTwo * numberQuoiThree
+
+        document.getElementById("blocMessage").insertAdjacentHTML("afterend", `<p>${nombreElements.toLocaleString()} combinaisons actuellement !</p>`)
+        document.getElementById("blocMessage").insertAdjacentHTML("afterend", `<p>${numberSorry} introductions, ${numberQui} personnes, ${numberVerbe} verbes, ${numberOu} lieux, ${numberQuoiTwo} objets et ${numberQuoiThree} raisons.</p>`)
+
+        const phrase = (iterations) => {
+            if (nombrePhrase + iterations > limite) {
+                alert(`Vous avez dépassé la limite de ${limite} phrases.`)
+            } else {
+                nombrePhrase += iterations
+                let sorryChoisi = Math.trunc(Math.random() * numberSorry)
+                let quiChoisi = Math.trunc(Math.random() * numberQui)
+                let verbeChoisi = Math.trunc(Math.random() * numberVerbe)
+                let ouChoisi = Math.trunc(Math.random() * numberOu)
+                let quoiTwoChoisi = Math.trunc(Math.random() * numberQuoiTwo)
+                let quoiThreeChoisi = Math.trunc(Math.random() * numberQuoiThree)
+
+                document.getElementById("blocMessage").insertAdjacentHTML("afterend",
+                `<img src="./imagesBidon/${qui[quiChoisi][1]}">
+                <img src="./imagesBidon/${verbe[verbeChoisi][1]}">
+                <img src="./imagesBidon/${ou[ouChoisi][1]}">
+                <img src="./imagesBidon/${quoiTwo[quoiTwoChoisi][1]}">
+                <img src="./imagesBidon/${quoiThree[quoiThreeChoisi][1]}">
+                
+                
+                <div class="msg"><p>${sorry[sorryChoisi]}, 
+                <span class="evidence">${qui[quiChoisi][0]} ${verbe[verbeChoisi][0]}</span> 
+                dans <span class="evidence">${ou[ouChoisi][0]}</span> 
+                à cause d'une ${quoiTwo[quoiTwoChoisi][0]}</span> 
+                qui <span class="evidence">${quoiThree[quoiThreeChoisi][0]}</span>...<hr/>
+                </p></div>`)
+            }
+        }        
+    </script>
+</body>
+</html>
